@@ -2,14 +2,14 @@
 
 ## Project Outline
 
-**  Conventions**
+**Conventions**
 - [C# Conventions](https://docs.microsoft.com/en-us/dotnet/csharp/fundamentals/coding-style/coding-conventions)
 
-**  Details**
+**Details**
 - C#
 - Quiz style as a text-based adventure game
 
-**  Pseudocode**
+**Pseudocode**
 - farded
 
 # Commits
