@@ -58,3 +58,9 @@
     - Clears console and resets console foreground colour.
 
 **02/03/2022**
+
+
+| Syntax      | Description |
+| ----------- | ----------- |
+| Header      | Title       |
+| Paragraph   | Text        |
