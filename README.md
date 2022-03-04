@@ -1,3 +1,12 @@
 # NCEA Assesment 1
 
-- - sus
+- sus
+
+- fard
+
+**TEST**
+
+*TEST*
+
+***TEST***
+__test__
