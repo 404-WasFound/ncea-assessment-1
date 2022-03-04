@@ -2,12 +2,15 @@
 
 ## Project Outline
 
-**Conventions**
+**  Conventions**
 - [C# Conventions](https://docs.microsoft.com/en-us/dotnet/csharp/fundamentals/coding-style/coding-conventions)
 
-**Details**
+**  Details**
 - C#
 - Quiz style as a text-based adventure game
+
+**  Pseudocode**
+- farded
 
 # Commits
 
@@ -32,8 +35,11 @@
 - Restarted project as code was messy and badly-formatted.
 - Created `Program`, `Util`, and `Game` classes.
 - Created `Util.staggeredPrint(string text, ConsoleColor colour=ConsoleColour.White, int wait=50)`.
-- Created `Util.stagWwait()`.
-- Created `Util.inRange(int num, int min, int max)`.
+    - Prints each character at a time on the same line.
+- Created `Util.stagWait()`.
+    - Waits appropriate time between lines of `staggeredPrint()`.
+- Created `Util.inRange(float num, float min, float max)`.
+    - Checks if `num` is between `min` and `max`.
 
 **28/02/2022**
 - Created `Game.intro()`, `Game.game1()`, `Game.game2()`, and `Game.game3()`.
