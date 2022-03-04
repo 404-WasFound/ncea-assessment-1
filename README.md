@@ -1,9 +1,11 @@
 # NCEA Assesment 1
 
-**C# Conventions:**
-- https://docs.microsoft.com/en-us/dotnet/csharp/fundamentals/coding-style/coding-conventions
+## Project Outline
 
-**Project Documentation / Outline:**
+**Conventions**
+[C# Conventions](https://docs.microsoft.com/en-us/dotnet/csharp/fundamentals/coding-style/coding-conventions)
+
+**Details**
 - C#
 - Quiz style as a text-based adventure game
 
