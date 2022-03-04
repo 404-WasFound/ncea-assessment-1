@@ -1,4 +1,4 @@
-public class Util
+class Util
 {
 
     // FARDED
@@ -54,6 +54,27 @@ public class Util
         Console.ForegroundColor = ConsoleColor.Yellow;
         Console.WriteLine(@"/!\ Error with input, please make sure you typed the right thing /!\");
         Console.ForegroundColor = ConsoleColor.White;
+
+    }
+
+    public static void exitOnInput(dynamic input)
+    {
+
+        Program program = new Program();
+
+        // User format string to avoid errors
+        string inputStr = $"{input}";
+
+        // Check if input is "QUIT"
+        if (inputStr == "QUIT")
+        {
+
+            Console.Clear();
+            Util.staggeredPrint("Thanks For playing o/", ConsoleColor.Green);
+            Thread.Sleep(250);
+            Environment.Exit(0);
+
+        }
 
     }
 

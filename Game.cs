@@ -1,4 +1,4 @@
-public class Game
+class Game
 {
 
     public static dynamic[] intro()
@@ -35,6 +35,9 @@ public class Game
 
         string name = Console.ReadLine();
 
+        // Exit program depening on user's input
+        Util.exitOnInput(name);
+
         // Check if 'name' is empty
         if (name == "")
         {
@@ -58,6 +61,9 @@ public class Game
         Console.Write("> ");
 
         string ageStr = Console.ReadLine();
+
+        // Exit program depening on user's input
+        Util.exitOnInput(ageStr);
 
         try {
 
@@ -91,15 +97,15 @@ public class Game
         string name = playerData[0];
         int age = playerData[1];
         
-        Console.ForegroundColor = ConsoleColor.Blue;
-        Util.staggeredPrint($"Why hello {name}, ", ConsoleColor.Blue);
+        Console.ForegroundColor = ConsoleColor.Red;
+        Util.staggeredPrint($"Why hello {name}, ", ConsoleColor.Red);
         Util.stagWait();
-        Util.staggeredPrint($"You're {age} right?", ConsoleColor.Blue);
+        Util.staggeredPrint($"You're {age} right?", ConsoleColor.Red);
         Util.stagWait();
-        Util.staggeredPrint("Yeah that's right...", ConsoleColor.Blue);
+        Util.staggeredPrint("Yeah that's right...", ConsoleColor.Red);
 
         Thread.Sleep(1000);
-        Util.staggeredPrint("To pass me, you must riddle me this...", ConsoleColor.Blue);
+        Util.staggeredPrint("To pass me, you must riddle me this...", ConsoleColor.Red);
         Util.stagWait();
 
         #region Riddles
@@ -113,7 +119,6 @@ public class Game
             Util.staggeredPrint(riddles[currentRiddle], ConsoleColor.Cyan, 100);
 
             // Get an answer 3 times, if the user does not get it after 3 tries they fail
-
             for (int i = 0 ; i < 3 ; i++)
             {
 
@@ -121,11 +126,14 @@ public class Game
                 Console.Write("> ");
                 string answer = Console.ReadLine();
 
-                // Check if 'answer' is the right answer
+                // Exit program depening on user's input
+                Util.exitOnInput(answer);
+
+                // Check if the user got the right answer
                 if (answer.Contains(answers[currentRiddle]))
                 {
 
-                    Util.staggeredPrint("Wow you got it right", ConsoleColor.Blue);
+                    Util.staggeredPrint("Wow you got it right", ConsoleColor.Red);
                     passes[currentRiddle] = true;
                     Thread.Sleep(500);
                     Console.Clear();
@@ -137,7 +145,9 @@ public class Game
                 {
 
                     Util.staggeredPrint("Nope, wrong", ConsoleColor.Yellow);
-                    
+
+                    // Check if user has failed 3 times
+                    // i increments by 1 starting at 0 so 2 is the index of 3
                     if (i == 2)
                     {
 
