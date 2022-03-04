@@ -10,6 +10,7 @@ class Program
 
         // Setup console settings
         Console.BackgroundColor = ConsoleColor.Black;
+        
         // Call '.Clear()' to set terminal to all DarkBlue
         Console.Clear();
         Console.ForegroundColor = ConsoleColor.White;

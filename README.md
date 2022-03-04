@@ -3,7 +3,7 @@
 ## Project Outline
 
 **Conventions**
-[C# Conventions](https://docs.microsoft.com/en-us/dotnet/csharp/fundamentals/coding-style/coding-conventions)
+- [C# Conventions](https://docs.microsoft.com/en-us/dotnet/csharp/fundamentals/coding-style/coding-conventions)
 
 **Details**
 - C#
@@ -25,10 +25,17 @@
 
 **26/02/2022**
 - Created `data/items.json` and `data/rooms.json`.
+- Created `Util.getJsonData(string filename)`.
 
 ## Version 2
 
 **27/02/2022**
 - Restarted project as code was messy and badly-formatted.
 - Created `Program`, `Util`. and `Game` classes.
-- Created `Util.staggeredPrint(string text, ConoleColor colour=ConsoleColour.White, int wait=150)`
+- Created `Util.staggeredPrint(string text, ConsoleColor colour=ConsoleColour.White, int wait=150)`.
+- Created `Util.stagWwait(int wait=200)`.
+- Created `Util.inRange(int num, int min, int max)`.
+
+**28/02/2022**
+- Created `Game.intro()`, `Game.game1()`, `Game.game2()`, and `Game.game3()`.
+- Created `Util.inputError()`.

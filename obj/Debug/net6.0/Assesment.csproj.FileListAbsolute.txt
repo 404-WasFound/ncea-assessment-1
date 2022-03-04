@@ -28,3 +28,18 @@ D:\Year_11\DTS\NCEA_Assesment_1\remake\Assesment\obj\Debug\net6.0\Assesment.dll
 D:\Year_11\DTS\NCEA_Assesment_1\remake\Assesment\obj\Debug\net6.0\ref\Assesment.dll
 D:\Year_11\DTS\NCEA_Assesment_1\remake\Assesment\obj\Debug\net6.0\Assesment.pdb
 D:\Year_11\DTS\NCEA_Assesment_1\remake\Assesment\obj\Debug\net6.0\Assesment.genruntimeconfig.cache
+D:\Code\GITHUB\c#\NCEA Assesment 1\ncea-assesment-1\bin\Debug\net6.0\Assesment.exe
+D:\Code\GITHUB\c#\NCEA Assesment 1\ncea-assesment-1\bin\Debug\net6.0\Assesment.deps.json
+D:\Code\GITHUB\c#\NCEA Assesment 1\ncea-assesment-1\bin\Debug\net6.0\Assesment.runtimeconfig.json
+D:\Code\GITHUB\c#\NCEA Assesment 1\ncea-assesment-1\bin\Debug\net6.0\Assesment.dll
+D:\Code\GITHUB\c#\NCEA Assesment 1\ncea-assesment-1\bin\Debug\net6.0\ref\Assesment.dll
+D:\Code\GITHUB\c#\NCEA Assesment 1\ncea-assesment-1\bin\Debug\net6.0\Assesment.pdb
+D:\Code\GITHUB\c#\NCEA Assesment 1\ncea-assesment-1\obj\Debug\net6.0\Assesment.csproj.AssemblyReference.cache
+D:\Code\GITHUB\c#\NCEA Assesment 1\ncea-assesment-1\obj\Debug\net6.0\Assesment.GeneratedMSBuildEditorConfig.editorconfig
+D:\Code\GITHUB\c#\NCEA Assesment 1\ncea-assesment-1\obj\Debug\net6.0\Assesment.AssemblyInfoInputs.cache
+D:\Code\GITHUB\c#\NCEA Assesment 1\ncea-assesment-1\obj\Debug\net6.0\Assesment.AssemblyInfo.cs
+D:\Code\GITHUB\c#\NCEA Assesment 1\ncea-assesment-1\obj\Debug\net6.0\Assesment.csproj.CoreCompileInputs.cache
+D:\Code\GITHUB\c#\NCEA Assesment 1\ncea-assesment-1\obj\Debug\net6.0\Assesment.dll
+D:\Code\GITHUB\c#\NCEA Assesment 1\ncea-assesment-1\obj\Debug\net6.0\ref\Assesment.dll
+D:\Code\GITHUB\c#\NCEA Assesment 1\ncea-assesment-1\obj\Debug\net6.0\Assesment.pdb
+D:\Code\GITHUB\c#\NCEA Assesment 1\ncea-assesment-1\obj\Debug\net6.0\Assesment.genruntimeconfig.cache
