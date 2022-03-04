@@ -1,12 +1,8 @@
 # NCEA Assesment 1
 
-- sus
+**C# Conventions:**
+- https://docs.microsoft.com/en-us/dotnet/csharp/fundamentals/coding-style/coding-conventions
 
-- fard
-
-**TEST**
-
-*TEST*
-
-***TEST***
-__test__
+**Project Documentation / Outline:**
+- C#
+- Quiz style as a text-based adventure game
