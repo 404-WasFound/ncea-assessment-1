@@ -1,6 +1,6 @@
-# NCEA Assesment 1
-
 ![Long bay college logo](https://www.longbaycollege.com/wp-content/uploads/2020/09/Long_Bay_College_Logo_Tag2-1024x141.png)
+
+# NCEA Assesment 1
 
 ## Project Outline
 
