@@ -68,14 +68,7 @@
 
 
 **02/03/2022**
-<<<<<<< HEAD
 - Increased miss input detection
     - Unentered fields are now countered for.
-=======
 
 
-| Syntax      | Description |
-| ----------- | ----------- |
-| Header      | Title       |
-| Paragraph   | Text        |
->>>>>>> 271cfb7e79ce38c5e2aedd8cba69fb3aad048d0b
