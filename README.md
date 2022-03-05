@@ -16,6 +16,10 @@
 
 # Commits
 
+## TODO
+
+**Menu system**
+
 ## Version 1
 
 **24/02/2022**
@@ -57,10 +61,12 @@
 - Created `Game.changeGame()`.
     - Clears console and resets console foreground colour.
 
+    ## Debugging
+
+    | Field | Expected Type | Input | Expected Output | Recived Output | Errors |
+    | ----- | ------------- | ----- | --------------- | -------------- | ------ |
+
+
 **02/03/2022**
-
-
-| Syntax      | Description |
-| ----------- | ----------- |
-| Header      | Title       |
-| Paragraph   | Text        |
+- Increased miss input detection
+    - Unentered fields are now countered for.
