@@ -1,6 +1,6 @@
-# NCEA Assesment 1
-
 ![Long bay college logo](https://www.longbaycollege.com/wp-content/uploads/2020/09/Long_Bay_College_Logo_Tag2-1024x141.png)
+
+# NCEA Assesment 1
 
 ## Project Outline
 
@@ -68,5 +68,14 @@
 
 
 **02/03/2022**
+<<<<<<< HEAD
 - Increased miss input detection
     - Unentered fields are now countered for.
+=======
+
+
+| Syntax      | Description |
+| ----------- | ----------- |
+| Header      | Title       |
+| Paragraph   | Text        |
+>>>>>>> 271cfb7e79ce38c5e2aedd8cba69fb3aad048d0b
