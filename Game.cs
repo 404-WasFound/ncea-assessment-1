@@ -35,9 +35,6 @@ class Game
 
         string name = Console.ReadLine();
 
-        // Exit program depening on user's input
-        Util.exitOnInput(name);
-
         // Check if 'name' is empty
         if (name == "")
         {
@@ -61,9 +58,6 @@ class Game
         Console.Write("> ");
 
         string ageStr = Console.ReadLine();
-
-        // Exit program depening on user's input
-        Util.exitOnInput(ageStr);
 
         try {
 
@@ -125,9 +119,6 @@ class Game
                 // Get user answer
                 Console.Write("> ");
                 string answer = Console.ReadLine();
-
-                // Exit program depening on user's input
-                Util.exitOnInput(answer);
 
                 // Check if the user got the right answer
                 if (answer.Contains(answers[currentRiddle]))

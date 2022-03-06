@@ -61,14 +61,21 @@
 - Created `Game.changeGame()`.
     - Clears console and resets console foreground colour.
 
-    ## Debugging
+**Debugging**
 
-    | Field | Expected Type | Input | Expected Output | Recived Output | Errors |
-    | ----- | ------------- | ----- | --------------- | -------------- | ------ |
+| Field | Expected Type | Input | Expected Output | Recived Output | Errors | Date |
+| ----- | ------------- | ----- | --------------- | -------------- | ------ | ---- |
 
 
 **02/03/2022**
-- Increased miss input detection
+- Increased miss input detection.
     - Unentered fields are now countered for.
 
+**03/03/2022 - 05/03/2022**
+- Better formatting implemented in `README.md`.
+    - Includes titles, dates, descriptions, outline, tables, and subtitles, and subdescriptions.
 
+**06/03/2022**
+- Created `Util.getMenu(dynamic[][] data, int maxItemStringLength)` and `Util.getKey(ConsoleKey key)`.
+    - Formatted text tables that are made up of columns and rows with titles.
+    - Gets key input and return true/false (only for specified keys defined at start) 
