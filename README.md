@@ -61,12 +61,6 @@
 - Created `Game.changeGame()`.
     - Clears console and resets console foreground colour.
 
-**Debugging**
-
-| Field | Expected Type | Input | Expected Output | Recived Output | Errors | Date |
-| ----- | ------------- | ----- | --------------- | -------------- | ------ | ---- |
-
-
 **02/03/2022**
 - Increased miss input detection.
     - Unentered fields are now countered for.
@@ -78,4 +72,16 @@
 **06/03/2022**
 - Created `Util.getMenu(dynamic[][] data, int maxItemStringLength)` and `Util.getKey(ConsoleKey key)`.
     - Formatted text tables that are made up of columns and rows with titles.
-    - Gets key input and return true/false (only for specified keys defined at start) 🧑‍🚒 
+    - Gets key input and return true/false (only for specified keys defined at start)
+
+**07/03/2022**
+- Created `Game.game2(dynamic[] playerData)`.
+    - User fights a dragon as the second challenge
+
+**08/03/2022**
+- Pass
+    - Desc
+
+**Debugging**
+| Field | Expected Type | Input | Expected Output | Recived Output | Errors | Date |
+| ----- | ------------- | ----- | --------------- | -------------- | ------ | ---- |
