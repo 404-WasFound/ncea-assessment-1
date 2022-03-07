@@ -19,11 +19,11 @@ public class Program
         dynamic[] playerData = new dynamic[2] {"", 0};
 
         // Call 'intro()' to start game
-        playerData = Game.intro();
+        //playerData = Game.intro();
 
         // Call 'game1()' to start game1, but wait time in between
-        Game.changeGame();
-        Game.game1(playerData);
+        // Game.changeGame();
+        // Game.game1(playerData);
 
         // Call 'game2()' to start game2, but wait time in between
         Game.changeGame();

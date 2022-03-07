@@ -209,13 +209,13 @@ class Game
         int playerHealth = 20;
         int playerDamage = 3;
 
-        // Monster settings
-        int monsterHealth = 50;
-        int monsterDamage = 8;
+        // Dragon settings
+        int dragonHealth = 50;
+        int dragonDamage = 8;
 
 
-        // Monster ASCII art
-        string[][] asciiMonster = {
+        // Dragon ASCII art
+        string[][] asciiDragon = {
 
             // Use '@' to allow escape characters
             new string[] { // Colour: Red
@@ -259,22 +259,22 @@ class Game
             }
 
         };
-        ConsoleColor[] asciiMonsterColours = new ConsoleColor[] {ConsoleColor.Red, ConsoleColor.Gray};
+        ConsoleColor[] asciiDragonColours = new ConsoleColor[] {ConsoleColor.Red, ConsoleColor.Gray};
 
         // Lambda expression to print ascii art as colour corresponding to index
-        Action<int> printAsciiMonster = index => 
+        Action<int> printAsciidragon = index => 
         {
 
             string final = "";
 
-            foreach (string line in asciiMonster[index])
+            foreach (string line in asciiDragon[index])
             {
 
                 final += line + "\n";
 
             }
 
-            Console.ForegroundColor = asciiMonsterColours[index];
+            Console.ForegroundColor = asciiDragonColours[index];
             Console.WriteLine(final);
             Console.ForegroundColor = ConsoleColor.White;
 
@@ -282,43 +282,53 @@ class Game
 
 
         // Create lambda expression to get user info and action menu index from user
-        Action<int> displayBattle = action =>
+        Action<int> displayBattle = none =>
         {
 
             #region menuSetup
 
             // Create player info menu
-            string[][] playerMenu = {
+            string[][] playerData = {
 
+                new string[] {"PLAYER"},
                 new string[] {$"Health: {playerHealth}"},
                 new string[] {$"Damage: {playerDamage}"}
 
             };
 
-            // Create monster info menu
-            string[][] monsterMenu = {
+            // Create dragon info menu
+            string[][] dragonData = {
 
-                new string[] {$"Health: {monsterHealth}"},
-                new string[] {$"Damage: {monsterDamage}"}
+                new string[] {"DRAGON"},
+                new string[] {$"Health: {dragonHealth}"},
+                new string[] {$"Damage: {dragonDamage}"}
 
             };
 
+            string dragonMenu = Util.getMenu(dragonData, 10);
+            string playerMenu = Util.getMenu(playerData, 10);
+
             #endregion
 
-            // Print actions menu
-            Console.WriteLine(actionsMenu);
-            // Get user action choice
-            Console.WriteLine("Enter action num\n> ");
-            int actionIndex = int.Parse(Console.ReadLine());
+            // Print actions menu and dragon ascii
+            Console.WriteLine(dragonMenu);
+            Console.ForegroundColor = asciiDragonColours[0];
+            foreach (string line in asciiDragon[0])
+            {
 
-            // Minus 1 because indexes start at 0
-            actionIndex--;
+                Console.WriteLine(line);
+
+            }
+
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine(playerMenu);
+            Console.WriteLine(actionsMenu);
 
         };
 
 
         // Use Util.getMenu() to create a boxed title
-        string[][] title = {new string[] {"Monster Battle"}};
+        string[][] title = {new string[] {"dragon Battle"}};
         string boxedTitle = Util.getMenu(title, 20);
         Console.WriteLine(boxedTitle, ConsoleColor.Magenta);
 
@@ -330,6 +340,17 @@ class Game
         Util.staggeredPrint($"To reach the next level, you must defeat me!", ConsoleColor.DarkYellow, 100);
 
         Console.Clear();
+
+        displayBattle(0);
+
+        // Get user action choice
+        Console.Write("Enter action num\n> ");
+        int actionIndex = int.Parse(Console.ReadLine());
+
+        // Minus 1 because indexes start at 0
+        actionIndex--;
+
+        Thread.Sleep(9999999);
 
     }
 
