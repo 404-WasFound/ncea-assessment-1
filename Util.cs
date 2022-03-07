@@ -54,21 +54,7 @@ class Util
         Console.ForegroundColor = ConsoleColor.White;
 
     }
-
-    public static bool getKey(ConsoleKey key)
-    {
-
-        ConsoleKeyInfo keyInfo = Console.ReadKey();
-
-        if (keyInfo.Key == key)
-        {
-
-            return true;
-
-        } else { return false; }
-
-    }
-
+    
     public static string getMenu(dynamic[][] data, int maxItemStringLength)
     {
 

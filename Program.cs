@@ -19,18 +19,18 @@ public class Program
         dynamic[] playerData = new dynamic[2] {"", 0};
 
         //Call 'intro()' to start game
-        playerData = Game.intro();
+        // playerData = Game.intro();
 
         // Test threading
         string[][] testData = new string[][] {
 
             new string[] {"INDEX", "TITLE", "DESC"},
-            new string[] {"", "poo", "stinky"},
-            new string[] {"", "fard", "deadly"},
-            new string[] {"", "number 2", "same as poo"},
-            new string[] {"", "1", "2"},
-            new string[] {"", "1", "3"},
-            new string[] {"", "1", "4"}
+            new string[] {"01", "poo", "stinky"},
+            new string[] {"02", "fard", "deadly"},
+            new string[] {"03", "number 2", "same as poo"},
+            new string[] {"04", "1", "2"},
+            new string[] {"05", "1", "3"},
+            new string[] {"06", "1", "4"}
 
         };
 
@@ -39,11 +39,19 @@ public class Program
         Console.WriteLine(testTable);
 
 
-        int currentIndex = 0;
+        //
+
+        int index = int.Parse(Console.ReadLine());
+        int item = int.Parse(Console.ReadLine());
+        Console.WriteLine(testData[index][item]);
+        Thread.Sleep(10000);
+
+        //
+    
 
         //Call 'game1()' to start game1, but wait time in between
-        Game.changeGame();
-        Game.game1(playerData);
+        // Game.changeGame();
+        // Game.game1(playerData);
 
         // // Call 'game2()' to start game2, but wait time in between
         // Game.changeGame();
