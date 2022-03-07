@@ -14,8 +14,9 @@ class Game
         // Get a random number between 0 and 1
         int num = random.Next(0, 2);
 
-        // ASCI title
-        string title = "╔═════════════════════════════╗\n║       Adventure Game        ║\n╚═════════════════════════════╝";
+        // Use Util.getMenu() to create a title
+        string title = Util.getMenu(new string[][] {new string[] {"Adventure Game"}}, 10);
+
         // Notify user that they can restart or exit at any time;
         Console.ForegroundColor = ConsoleColor.Red;
         Console.WriteLine(@"/!\ Note that you can type 'RESTART' in any input to restart the game, or 'QUIT' to exit the program /!\");
@@ -190,8 +191,31 @@ class Game
     public static void game2(dynamic[] playerData)
     {
 
+        // Actions menu and indexes
+        string[][] menu = {
+
+            new string[] {"01", "Attack", "02", "Reason"},
+            new string[] {"03", "Flee", "04", "Do Nothing"}
+
+        };
+
+        // Create seperate array for actions to be accessed by index input
+        string[] menuActions = {"Attack", "Reason", "Flee", "Do Nothing"};
+
+        // Use Util.getMenu() to create a menu
+        string actionsMenu = Util.getMenu(menu, 10);
+
+        // Player settings
+        int playerHealth = 20;
+        int playerDamage = 3;
+
+        // Monster settings
+        int monsterHealth = 50;
+        int monsterDamage = 8;
+
+
         // Monster ASCII art
-        string[][] asciiMonster = new string[][] {
+        string[][] asciiMonster = {
 
             // Use '@' to allow escape characters
             new string[] { // Colour: Red
@@ -237,7 +261,7 @@ class Game
         };
         ConsoleColor[] asciiMonsterColours = new ConsoleColor[] {ConsoleColor.Red, ConsoleColor.Gray};
 
-        // Lambda function to print ascii art as colour corresponding to index
+        // Lambda expression to print ascii art as colour corresponding to index
         Action<int> printAsciiMonster = index => 
         {
 
@@ -255,6 +279,43 @@ class Game
             Console.ForegroundColor = ConsoleColor.White;
 
         };
+
+
+        // Create lambda expression to get user info and action menu index from user
+        Action<int> displayBattle = action =>
+        {
+
+            #region menuSetup
+
+            // Create player info menu
+            string[][] playerMenu = {
+
+                new string[] {$"Health: {playerHealth}"},
+                new string[] {$"Damage: {playerDamage}"}
+
+            };
+
+            // Create monster info menu
+            string[][] monsterMenu = {
+
+                new string[] {$"Health: {monsterHealth}"},
+                new string[] {$"Damage: {monsterDamage}"}
+
+            };
+
+            #endregion
+
+            // Print actions menu
+            Console.WriteLine(actionsMenu);
+            // Get user action choice
+            Console.WriteLine("Enter action num\n> ");
+            int actionIndex = int.Parse(Console.ReadLine());
+
+            // Minus 1 because indexes start at 0
+            actionIndex--;
+
+        };
+
 
         // Use Util.getMenu() to create a boxed title
         string[][] title = {new string[] {"Monster Battle"}};
