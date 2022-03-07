@@ -18,8 +18,8 @@ public class Program
         // Setup variables
         dynamic[] playerData = new dynamic[2] {"", 0};
 
-        // Call 'intro()' to start game
-        // playerData = Game.intro();
+        //Call 'intro()' to start game
+        playerData = Game.intro();
 
         // Test threading
         string[][] testData = new string[][] {
@@ -41,54 +41,9 @@ public class Program
 
         int currentIndex = 0;
 
-        while (true)
-        {
-
-            if (Util.getKey(ConsoleKey.UpArrow))
-            {
-
-                currentIndex--;
-
-                for (int i = 0 ; i < testData.Length ; i++)
-                {
-
-                    if (i == currentIndex)
-                    {
-
-                        testData[i][0] = ">";
-
-                    } else { testData[i][0] = ""; }
-
-                }
-
-            } else if (Util.getKey(ConsoleKey.DownArrow))
-            {
-
-                currentIndex++;
-
-                for (int i = 0 ; i < testData.Length ; i++)
-                {
-
-                    if (i == currentIndex)
-                    {
-
-                        testData[i][0] = ">";
-
-                    } else { testData[i][0] = ""; }
-
-                }
-
-            }
-
-            Console.Clear();
-            testTable = Util.getMenu(testData, 10);
-            Console.WriteLine(testTable);
-
-        }
-
-        // //Call 'game1()' to start game1, but wait time in between
-        // Game.changeGame();
-        // Game.game1(playerData);
+        //Call 'game1()' to start game1, but wait time in between
+        Game.changeGame();
+        Game.game1(playerData);
 
         // // Call 'game2()' to start game2, but wait time in between
         // Game.changeGame();

@@ -78,4 +78,4 @@
 **06/03/2022**
 - Created `Util.getMenu(dynamic[][] data, int maxItemStringLength)` and `Util.getKey(ConsoleKey key)`.
     - Formatted text tables that are made up of columns and rows with titles.
-    - Gets key input and return true/false (only for specified keys defined at start) 
+    - Gets key input and return true/false (only for specified keys defined at start) 🧑‍🚒 
