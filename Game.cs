@@ -162,9 +162,9 @@ class Game
             if (passes.Contains(false))
             {
 
-                Util.staggeredPrint("Hmm, you failed some of the riddles", ConsoleColor.Blue);
+                Util.staggeredPrint("Hmm, you failed some of the riddles", ConsoleColor.Red);
                 Util.stagWait();
-                Util.staggeredPrint("But you got some right so I'll let you pass", ConsoleColor.Blue);
+                Util.staggeredPrint("But you got some right so I'll let you pass", ConsoleColor.Red);
 
             }
 
@@ -187,10 +187,88 @@ class Game
 
     }
 
-    public static void game2()
+    public static void game2(dynamic[] playerData)
     {
 
-        //
+        // Monster ASCII art
+        string[][] asciiMonster = new string[][] {
+
+            // Use '@' to allow escape characters
+            new string[] { // Colour: Red
+
+                @" <>=======()",
+                @"(/\___   /|\\          ()==========<>_",
+                @"      \_/ | \\        //|\   ______/ \)",
+                @"        \_|  \\      // | \_/",
+                @"          \|\/|\_   //  /\/",
+                @"           (**)\ \_//  /",
+                @"          //_/\_\/ /  |",
+                @"         @@/  |=\  \  |",
+                @"              \_=\_ \ |",
+                @"                \==\ \|\_",
+                @"             __(\===\(  )\",
+                @"            (((~) __(_/   |",
+                @"                 (((~) \  /",
+                @"                 ______/ /",
+                @"                 '------'"
+
+            },
+
+            new string[] { // Colour: Grey
+
+                @" <>=======()",
+                @"(/\___   /|\\          ()==========<>_",
+                @"      \_/ | \\        //|\   ______/ \)",
+                @"        \_|  \\      // | \_/",
+                @"          \|\/|\_   //  /\/",
+                @"           (Xx)\ \_//  /",
+                @"          //_/\_\/ /  |",
+                @"         @@/  |=\  \  |",
+                @"              \_=\_ \ |",
+                @"                \==\ \|\_",
+                @"             __(\===\(  )\",
+                @"            (((~) __(_/   |",
+                @"                 (((~) \  /",
+                @"                 ______/ /",
+                @"                 '------'"
+
+            }
+
+        };
+        ConsoleColor[] asciiMonsterColours = new ConsoleColor[] {ConsoleColor.Red, ConsoleColor.Gray};
+
+        // Lambda function to print ascii art as colour corresponding to index
+        Action<int> printAsciiMonster = index => 
+        {
+
+            string final = "";
+
+            foreach (string line in asciiMonster[index])
+            {
+
+                final += line + "\n";
+
+            }
+
+            Console.ForegroundColor = asciiMonsterColours[index];
+            Console.WriteLine(final);
+            Console.ForegroundColor = ConsoleColor.White;
+
+        };
+
+        // Use Util.getMenu() to create a boxed title
+        string[][] title = {new string[] {"Monster Battle"}};
+        string boxedTitle = Util.getMenu(title, 20);
+        Console.WriteLine(boxedTitle, ConsoleColor.Magenta);
+
+        // Welcome player
+        Util.staggeredPrint($"Well hello there {playerData[0]},", ConsoleColor.DarkYellow);
+        Util.stagWait();
+        Util.staggeredPrint($"Welcome to the second trial", ConsoleColor.DarkYellow);
+        Util.stagWait();
+        Util.staggeredPrint($"To reach the next level, you must defeat me!", ConsoleColor.DarkYellow, 100);
+
+        Console.Clear();
 
     }
 
