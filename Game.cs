@@ -15,7 +15,7 @@ class Game
         int num = random.Next(0, 2);
 
         // Use Util.getMenu() to create a title
-        string title = Util.getMenu(new string[][] {new string[] {"Adventure Game"}}, 10);
+        string title = Util.getMenu(new string[][] {new string[] {"Adventure Game"}}, "Adventure Game".Length);
 
         // Notify user that they can restart or exit at any time;
         Console.ForegroundColor = ConsoleColor.Red;
@@ -213,7 +213,6 @@ class Game
         int dragonHealth = 50;
         int dragonDamage = 8;
 
-
         // Dragon ASCII art
         string[][] asciiDragon = {
 
@@ -259,7 +258,7 @@ class Game
             }
 
         };
-        ConsoleColor[] asciiDragonColours = new ConsoleColor[] {ConsoleColor.Red, ConsoleColor.Gray};
+        ConsoleColor[] asciiDragonColours = new ConsoleColor[] {ConsoleColor.Red, ConsoleColor.Yellow};
 
         // Lambda expression to print ascii art as colour corresponding to index
         Action<int> printAsciidragon = index => 
@@ -280,9 +279,8 @@ class Game
 
         };
 
-
         // Create lambda expression to get user info and action menu index from user
-        Action<int> displayBattle = none =>
+        Action<int> displayBattle = index =>
         {
 
             #region menuSetup
@@ -312,8 +310,8 @@ class Game
 
             // Print actions menu and dragon ascii
             Console.WriteLine(dragonMenu);
-            Console.ForegroundColor = asciiDragonColours[0];
-            foreach (string line in asciiDragon[0])
+            Console.ForegroundColor = asciiDragonColours[index];
+            foreach (string line in asciiDragon[index])
             {
 
                 Console.WriteLine(line);
@@ -321,13 +319,28 @@ class Game
             }
 
             Console.ForegroundColor = ConsoleColor.White;
-            Console.WriteLine(playerMenu);
+
+            // Calculate positioning of 'playerMenu'
+            string[] playerMenuLines = playerMenu.Split("\n");
+            int playerMenuLen = playerMenuLines[0].Length;
+            int actionsMenuLen = actionsMenu.Split("\n")[0].Length;
+            int cursorX = actionsMenuLen - playerMenuLen;
+
+            // Print each line at determined position
+            foreach (string line in playerMenuLines)
+            {
+                Console.SetCursorPosition(cursorX, Console.CursorTop);
+                Console.WriteLine(line);
+
+            }
+
+            // Reset cursor position
+            Console.SetCursorPosition(0, Console.CursorTop);
             Console.WriteLine(actionsMenu);
 
         };
 
-
-        // Use Util.getMenu() to create a boxed title
+        // 'Use Util.getMenu()' to create a boxed title
         string[][] title = {new string[] {"dragon Battle"}};
         string boxedTitle = Util.getMenu(title, 20);
         Console.WriteLine(boxedTitle, ConsoleColor.Magenta);
@@ -341,7 +354,7 @@ class Game
 
         Console.Clear();
 
-        displayBattle(0);
+        displayBattle(1);
 
         // Get user action choice
         Console.Write("Enter action num\n> ");
