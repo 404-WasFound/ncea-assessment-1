@@ -75,8 +75,8 @@
     - User fights a dragon as the second challenge
 
 **08/03/2022**
-- Pass
-    - Desc
+- Added ASCII art for battle and menus / HUD in `Game.game2()`.
+    - Creates a 1 - 4 action choice menu, displays dragon ASCII art, displays player and dragon stats.
 
 **Debugging**
 | Field | Expected Type | Input | Expected Output | Recived Output | Errors | Date |
