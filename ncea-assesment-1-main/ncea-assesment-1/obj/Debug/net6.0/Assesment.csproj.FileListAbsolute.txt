@@ -1,0 +1,75 @@
+E:\Year_11\DTS\NCEA_Assesment_1\remake\Assesment\bin\Debug\net6.0\Assesment.exe
+E:\Year_11\DTS\NCEA_Assesment_1\remake\Assesment\bin\Debug\net6.0\Assesment.deps.json
+E:\Year_11\DTS\NCEA_Assesment_1\remake\Assesment\bin\Debug\net6.0\Assesment.runtimeconfig.json
+E:\Year_11\DTS\NCEA_Assesment_1\remake\Assesment\bin\Debug\net6.0\Assesment.dll
+E:\Year_11\DTS\NCEA_Assesment_1\remake\Assesment\bin\Debug\net6.0\ref\Assesment.dll
+E:\Year_11\DTS\NCEA_Assesment_1\remake\Assesment\bin\Debug\net6.0\Assesment.pdb
+E:\Year_11\DTS\NCEA_Assesment_1\remake\Assesment\obj\Debug\net6.0\Assesment.csproj.AssemblyReference.cache
+E:\Year_11\DTS\NCEA_Assesment_1\remake\Assesment\obj\Debug\net6.0\Assesment.GeneratedMSBuildEditorConfig.editorconfig
+E:\Year_11\DTS\NCEA_Assesment_1\remake\Assesment\obj\Debug\net6.0\Assesment.AssemblyInfoInputs.cache
+E:\Year_11\DTS\NCEA_Assesment_1\remake\Assesment\obj\Debug\net6.0\Assesment.AssemblyInfo.cs
+E:\Year_11\DTS\NCEA_Assesment_1\remake\Assesment\obj\Debug\net6.0\Assesment.csproj.CoreCompileInputs.cache
+E:\Year_11\DTS\NCEA_Assesment_1\remake\Assesment\obj\Debug\net6.0\Assesment.dll
+E:\Year_11\DTS\NCEA_Assesment_1\remake\Assesment\obj\Debug\net6.0\ref\Assesment.dll
+E:\Year_11\DTS\NCEA_Assesment_1\remake\Assesment\obj\Debug\net6.0\Assesment.pdb
+E:\Year_11\DTS\NCEA_Assesment_1\remake\Assesment\obj\Debug\net6.0\Assesment.genruntimeconfig.cache
+D:\Year_11\DTS\NCEA_Assesment_1\remake\Assesment\bin\Debug\net6.0\Assesment.exe
+D:\Year_11\DTS\NCEA_Assesment_1\remake\Assesment\bin\Debug\net6.0\Assesment.deps.json
+D:\Year_11\DTS\NCEA_Assesment_1\remake\Assesment\bin\Debug\net6.0\Assesment.runtimeconfig.json
+D:\Year_11\DTS\NCEA_Assesment_1\remake\Assesment\bin\Debug\net6.0\Assesment.dll
+D:\Year_11\DTS\NCEA_Assesment_1\remake\Assesment\bin\Debug\net6.0\ref\Assesment.dll
+D:\Year_11\DTS\NCEA_Assesment_1\remake\Assesment\bin\Debug\net6.0\Assesment.pdb
+D:\Year_11\DTS\NCEA_Assesment_1\remake\Assesment\obj\Debug\net6.0\Assesment.csproj.AssemblyReference.cache
+D:\Year_11\DTS\NCEA_Assesment_1\remake\Assesment\obj\Debug\net6.0\Assesment.GeneratedMSBuildEditorConfig.editorconfig
+D:\Year_11\DTS\NCEA_Assesment_1\remake\Assesment\obj\Debug\net6.0\Assesment.AssemblyInfoInputs.cache
+D:\Year_11\DTS\NCEA_Assesment_1\remake\Assesment\obj\Debug\net6.0\Assesment.AssemblyInfo.cs
+D:\Year_11\DTS\NCEA_Assesment_1\remake\Assesment\obj\Debug\net6.0\Assesment.csproj.CoreCompileInputs.cache
+D:\Year_11\DTS\NCEA_Assesment_1\remake\Assesment\obj\Debug\net6.0\Assesment.dll
+D:\Year_11\DTS\NCEA_Assesment_1\remake\Assesment\obj\Debug\net6.0\ref\Assesment.dll
+D:\Year_11\DTS\NCEA_Assesment_1\remake\Assesment\obj\Debug\net6.0\Assesment.pdb
+D:\Year_11\DTS\NCEA_Assesment_1\remake\Assesment\obj\Debug\net6.0\Assesment.genruntimeconfig.cache
+D:\Code\GITHUB\c#\NCEA Assesment 1\ncea-assesment-1\bin\Debug\net6.0\Assesment.exe
+D:\Code\GITHUB\c#\NCEA Assesment 1\ncea-assesment-1\bin\Debug\net6.0\Assesment.deps.json
+D:\Code\GITHUB\c#\NCEA Assesment 1\ncea-assesment-1\bin\Debug\net6.0\Assesment.runtimeconfig.json
+D:\Code\GITHUB\c#\NCEA Assesment 1\ncea-assesment-1\bin\Debug\net6.0\Assesment.dll
+D:\Code\GITHUB\c#\NCEA Assesment 1\ncea-assesment-1\bin\Debug\net6.0\ref\Assesment.dll
+D:\Code\GITHUB\c#\NCEA Assesment 1\ncea-assesment-1\bin\Debug\net6.0\Assesment.pdb
+D:\Code\GITHUB\c#\NCEA Assesment 1\ncea-assesment-1\obj\Debug\net6.0\Assesment.csproj.AssemblyReference.cache
+D:\Code\GITHUB\c#\NCEA Assesment 1\ncea-assesment-1\obj\Debug\net6.0\Assesment.GeneratedMSBuildEditorConfig.editorconfig
+D:\Code\GITHUB\c#\NCEA Assesment 1\ncea-assesment-1\obj\Debug\net6.0\Assesment.AssemblyInfoInputs.cache
+D:\Code\GITHUB\c#\NCEA Assesment 1\ncea-assesment-1\obj\Debug\net6.0\Assesment.AssemblyInfo.cs
+D:\Code\GITHUB\c#\NCEA Assesment 1\ncea-assesment-1\obj\Debug\net6.0\Assesment.csproj.CoreCompileInputs.cache
+D:\Code\GITHUB\c#\NCEA Assesment 1\ncea-assesment-1\obj\Debug\net6.0\Assesment.dll
+D:\Code\GITHUB\c#\NCEA Assesment 1\ncea-assesment-1\obj\Debug\net6.0\ref\Assesment.dll
+D:\Code\GITHUB\c#\NCEA Assesment 1\ncea-assesment-1\obj\Debug\net6.0\Assesment.pdb
+D:\Code\GITHUB\c#\NCEA Assesment 1\ncea-assesment-1\obj\Debug\net6.0\Assesment.genruntimeconfig.cache
+D:\Code\C#\NCEA Assesment\bin\Debug\net6.0\Assesment.exe
+D:\Code\C#\NCEA Assesment\bin\Debug\net6.0\Assesment.deps.json
+D:\Code\C#\NCEA Assesment\bin\Debug\net6.0\Assesment.runtimeconfig.json
+D:\Code\C#\NCEA Assesment\bin\Debug\net6.0\Assesment.dll
+D:\Code\C#\NCEA Assesment\bin\Debug\net6.0\ref\Assesment.dll
+D:\Code\C#\NCEA Assesment\bin\Debug\net6.0\Assesment.pdb
+D:\Code\C#\NCEA Assesment\obj\Debug\net6.0\Assesment.csproj.AssemblyReference.cache
+D:\Code\C#\NCEA Assesment\obj\Debug\net6.0\Assesment.GeneratedMSBuildEditorConfig.editorconfig
+D:\Code\C#\NCEA Assesment\obj\Debug\net6.0\Assesment.AssemblyInfoInputs.cache
+D:\Code\C#\NCEA Assesment\obj\Debug\net6.0\Assesment.AssemblyInfo.cs
+D:\Code\C#\NCEA Assesment\obj\Debug\net6.0\Assesment.csproj.CoreCompileInputs.cache
+D:\Code\C#\NCEA Assesment\obj\Debug\net6.0\Assesment.dll
+D:\Code\C#\NCEA Assesment\obj\Debug\net6.0\ref\Assesment.dll
+D:\Code\C#\NCEA Assesment\obj\Debug\net6.0\Assesment.pdb
+D:\Code\C#\NCEA Assesment\obj\Debug\net6.0\Assesment.genruntimeconfig.cache
+\\internal.lbc.school.nz\users\home\students\20234\documents\!DTS NCEA 1\ncea-assesment-1-main\ncea-assesment-1\bin\Debug\net6.0\Assesment.exe
+\\internal.lbc.school.nz\users\home\students\20234\documents\!DTS NCEA 1\ncea-assesment-1-main\ncea-assesment-1\bin\Debug\net6.0\Assesment.deps.json
+\\internal.lbc.school.nz\users\home\students\20234\documents\!DTS NCEA 1\ncea-assesment-1-main\ncea-assesment-1\bin\Debug\net6.0\Assesment.runtimeconfig.json
+\\internal.lbc.school.nz\users\home\students\20234\documents\!DTS NCEA 1\ncea-assesment-1-main\ncea-assesment-1\bin\Debug\net6.0\Assesment.dll
+\\internal.lbc.school.nz\users\home\students\20234\documents\!DTS NCEA 1\ncea-assesment-1-main\ncea-assesment-1\bin\Debug\net6.0\ref\Assesment.dll
+\\internal.lbc.school.nz\users\home\students\20234\documents\!DTS NCEA 1\ncea-assesment-1-main\ncea-assesment-1\bin\Debug\net6.0\Assesment.pdb
+\\internal.lbc.school.nz\users\home\students\20234\documents\!DTS NCEA 1\ncea-assesment-1-main\ncea-assesment-1\obj\Debug\net6.0\Assesment.csproj.AssemblyReference.cache
+\\internal.lbc.school.nz\users\home\students\20234\documents\!DTS NCEA 1\ncea-assesment-1-main\ncea-assesment-1\obj\Debug\net6.0\Assesment.GeneratedMSBuildEditorConfig.editorconfig
+\\internal.lbc.school.nz\users\home\students\20234\documents\!DTS NCEA 1\ncea-assesment-1-main\ncea-assesment-1\obj\Debug\net6.0\Assesment.AssemblyInfoInputs.cache
+\\internal.lbc.school.nz\users\home\students\20234\documents\!DTS NCEA 1\ncea-assesment-1-main\ncea-assesment-1\obj\Debug\net6.0\Assesment.AssemblyInfo.cs
+\\internal.lbc.school.nz\users\home\students\20234\documents\!DTS NCEA 1\ncea-assesment-1-main\ncea-assesment-1\obj\Debug\net6.0\Assesment.csproj.CoreCompileInputs.cache
+\\internal.lbc.school.nz\users\home\students\20234\documents\!DTS NCEA 1\ncea-assesment-1-main\ncea-assesment-1\obj\Debug\net6.0\Assesment.dll
+\\internal.lbc.school.nz\users\home\students\20234\documents\!DTS NCEA 1\ncea-assesment-1-main\ncea-assesment-1\obj\Debug\net6.0\ref\Assesment.dll
+\\internal.lbc.school.nz\users\home\students\20234\documents\!DTS NCEA 1\ncea-assesment-1-main\ncea-assesment-1\obj\Debug\net6.0\Assesment.pdb
+\\internal.lbc.school.nz\users\home\students\20234\documents\!DTS NCEA 1\ncea-assesment-1-main\ncea-assesment-1\obj\Debug\net6.0\Assesment.genruntimeconfig.cache
