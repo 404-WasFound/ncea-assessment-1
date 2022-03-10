@@ -340,6 +340,14 @@ class Game
 
         };
 
+        // Create lambda expression to display secondary action menu items corresponding to index of user
+        Action<int> displaySecondaryActions = index =>
+        {
+
+            //
+
+        };
+
         // 'Use Util.getMenu()' to create a boxed title
         string[][] title = {new string[] {"dragon Battle"}};
         string boxedTitle = Util.getMenu(title, 20);
@@ -358,10 +366,21 @@ class Game
 
         // Get user action choice
         Console.Write("Enter action num\n> ");
-        int actionIndex = int.Parse(Console.ReadLine());
 
-        // Minus 1 because indexes start at 0
-        actionIndex--;
+        try 
+        {
+
+            int actionIndex = int.Parse(Console.ReadLine());
+
+            // Minus 1 because indexes start at 0
+         actionIndex--;
+
+        } catch (FormatException)
+        {
+
+            //
+
+        }
 
         Thread.Sleep(9999999);
 

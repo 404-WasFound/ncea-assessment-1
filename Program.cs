@@ -8,22 +8,33 @@ public class Program
     public static void Main(string[] args)
     {
 
+        Random random = new Random();
+
         // Setup console settings
-        Console.BackgroundColor = ConsoleColor.DarkBlue;
+        Console.BackgroundColor = ConsoleColor.Black;
         
-        // Call '.Clear()' to set terminal to all DarkBlue
+        // Call '.Clear()' to set terminal to all DarkBlue//
         Console.Clear();
         Console.ForegroundColor = ConsoleColor.White;
 
         // Setup variables
         dynamic[] playerData = new dynamic[2] {"", 0};
 
+        // Console.WriteLine(random.Next(10000, 13000));
+        // Thread.Sleep(1000);
+        // int num = random.Next(10000, 13000);
+        // Thread.Sleep(1000);
+        // Console.WriteLine(num);
+        // Thread.Sleep(1000);
+        // try { Console.Beep(num, 2); } catch (Exception e) { Console.WriteLine(e); }
+        // Thread.Sleep(100000);
+
         // Call 'intro()' to start game
-        // playerData = Game.intro();
+        playerData = Game.intro();
 
         // // Call 'game1()' to start game1, but wait time in between
-        // Game.changeGame();
-        // Game.game1(playerData);
+        Game.changeGame();
+        Game.game1(playerData);
 
         // Call 'game2()' to start game2, but wait time in between
         Game.changeGame();
@@ -34,6 +45,7 @@ public class Program
         // Call 'game3()' to start game3, but wait time in between
         // Game.changeGame();
         // Game.game3();
+
 
     }
 

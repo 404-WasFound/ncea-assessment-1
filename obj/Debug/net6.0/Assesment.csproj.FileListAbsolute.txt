@@ -58,3 +58,18 @@ D:\Code\C#\NCEA Assesment\obj\Debug\net6.0\Assesment.dll
 D:\Code\C#\NCEA Assesment\obj\Debug\net6.0\ref\Assesment.dll
 D:\Code\C#\NCEA Assesment\obj\Debug\net6.0\Assesment.pdb
 D:\Code\C#\NCEA Assesment\obj\Debug\net6.0\Assesment.genruntimeconfig.cache
+\\internal.lbc.school.nz\users\home\students\20234\documents\!DTS NCEA 1\ncea-assesment-1-main\ncea-assesment-1\bin\Debug\net6.0\Assesment.exe
+\\internal.lbc.school.nz\users\home\students\20234\documents\!DTS NCEA 1\ncea-assesment-1-main\ncea-assesment-1\bin\Debug\net6.0\Assesment.deps.json
+\\internal.lbc.school.nz\users\home\students\20234\documents\!DTS NCEA 1\ncea-assesment-1-main\ncea-assesment-1\bin\Debug\net6.0\Assesment.runtimeconfig.json
+\\internal.lbc.school.nz\users\home\students\20234\documents\!DTS NCEA 1\ncea-assesment-1-main\ncea-assesment-1\bin\Debug\net6.0\Assesment.dll
+\\internal.lbc.school.nz\users\home\students\20234\documents\!DTS NCEA 1\ncea-assesment-1-main\ncea-assesment-1\bin\Debug\net6.0\ref\Assesment.dll
+\\internal.lbc.school.nz\users\home\students\20234\documents\!DTS NCEA 1\ncea-assesment-1-main\ncea-assesment-1\bin\Debug\net6.0\Assesment.pdb
+\\internal.lbc.school.nz\users\home\students\20234\documents\!DTS NCEA 1\ncea-assesment-1-main\ncea-assesment-1\obj\Debug\net6.0\Assesment.csproj.AssemblyReference.cache
+\\internal.lbc.school.nz\users\home\students\20234\documents\!DTS NCEA 1\ncea-assesment-1-main\ncea-assesment-1\obj\Debug\net6.0\Assesment.GeneratedMSBuildEditorConfig.editorconfig
+\\internal.lbc.school.nz\users\home\students\20234\documents\!DTS NCEA 1\ncea-assesment-1-main\ncea-assesment-1\obj\Debug\net6.0\Assesment.AssemblyInfoInputs.cache
+\\internal.lbc.school.nz\users\home\students\20234\documents\!DTS NCEA 1\ncea-assesment-1-main\ncea-assesment-1\obj\Debug\net6.0\Assesment.AssemblyInfo.cs
+\\internal.lbc.school.nz\users\home\students\20234\documents\!DTS NCEA 1\ncea-assesment-1-main\ncea-assesment-1\obj\Debug\net6.0\Assesment.csproj.CoreCompileInputs.cache
+\\internal.lbc.school.nz\users\home\students\20234\documents\!DTS NCEA 1\ncea-assesment-1-main\ncea-assesment-1\obj\Debug\net6.0\Assesment.dll
+\\internal.lbc.school.nz\users\home\students\20234\documents\!DTS NCEA 1\ncea-assesment-1-main\ncea-assesment-1\obj\Debug\net6.0\ref\Assesment.dll
+\\internal.lbc.school.nz\users\home\students\20234\documents\!DTS NCEA 1\ncea-assesment-1-main\ncea-assesment-1\obj\Debug\net6.0\Assesment.pdb
+\\internal.lbc.school.nz\users\home\students\20234\documents\!DTS NCEA 1\ncea-assesment-1-main\ncea-assesment-1\obj\Debug\net6.0\Assesment.genruntimeconfig.cache

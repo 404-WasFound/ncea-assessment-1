@@ -17,6 +17,8 @@ class Util
     public static void staggeredPrint(string text, ConsoleColor colour=ConsoleColor.White, int wait=50)
     {
 
+        Random random = new Random();
+
         // Change text colour to 'colour' or leave as white if args not passed
         Console.ForegroundColor = colour;
 
@@ -28,6 +30,8 @@ class Util
             Thread.Sleep(wait);
 
         }
+
+        // test
 
         // Move cursor to next line so next output statements don't get mixed
         Console.Write("\n");
