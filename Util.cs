@@ -25,6 +25,7 @@ class Util
         foreach (char c in text)
         {
 
+            // Write character
             Console.Write(c);
             // Wait 150 miliseconds if 'wait' is not set
             Thread.Sleep(wait);

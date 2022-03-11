@@ -201,6 +201,14 @@ class Game
 
         // Create seperate array for actions to be accessed by index input
         string[] menuActions = {"Attack", "Reason", "Flee", "Do Nothing"};
+        string[][][] menuSecondaryActions = {
+
+            new string[][] {new string[] {}},
+            new string[][] {},
+            new string[][] {},
+            new string[][] {}
+
+        };
 
         // Use Util.getMenu() to create a menu
         string actionsMenu = Util.getMenu(menu, 10);

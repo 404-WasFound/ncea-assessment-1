@@ -28,7 +28,7 @@ public class Program
         // Thread.Sleep(1000);
         // Console.WriteLine(num);
         // Thread.Sleep(1000);
-        // try { Console.Beep(num, 2); } catch (Exception e) { Console.WriteLine(e); }
+        //try { return; } catch (Exception e) { Console.WriteLine(e); }
         // Thread.Sleep(100000);
 
         // Call 'intro()' to start game
