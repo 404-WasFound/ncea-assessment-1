@@ -10,13 +10,14 @@ class Util
 
             return true;
 
-        } else return false;
+        } else { return false; };
 
     }
 
     public static void staggeredPrint(string text, ConsoleColor colour=ConsoleColor.White, int wait=50)
     {
 
+        // Create instance of System.Random class
         Random random = new Random();
 
         // Change text colour to 'colour' or leave as white if args not passed

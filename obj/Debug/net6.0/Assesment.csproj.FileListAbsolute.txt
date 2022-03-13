@@ -73,3 +73,18 @@ D:\Code\C#\NCEA Assesment\obj\Debug\net6.0\Assesment.genruntimeconfig.cache
 \\internal.lbc.school.nz\users\home\students\20234\documents\!DTS NCEA 1\ncea-assesment-1-main\ncea-assesment-1\obj\Debug\net6.0\ref\Assesment.dll
 \\internal.lbc.school.nz\users\home\students\20234\documents\!DTS NCEA 1\ncea-assesment-1-main\ncea-assesment-1\obj\Debug\net6.0\Assesment.pdb
 \\internal.lbc.school.nz\users\home\students\20234\documents\!DTS NCEA 1\ncea-assesment-1-main\ncea-assesment-1\obj\Debug\net6.0\Assesment.genruntimeconfig.cache
+D:\Code\C#\ncea-assesment-1\bin\Debug\net6.0\Assesment.exe
+D:\Code\C#\ncea-assesment-1\bin\Debug\net6.0\Assesment.deps.json
+D:\Code\C#\ncea-assesment-1\bin\Debug\net6.0\Assesment.runtimeconfig.json
+D:\Code\C#\ncea-assesment-1\bin\Debug\net6.0\Assesment.dll
+D:\Code\C#\ncea-assesment-1\bin\Debug\net6.0\ref\Assesment.dll
+D:\Code\C#\ncea-assesment-1\bin\Debug\net6.0\Assesment.pdb
+D:\Code\C#\ncea-assesment-1\obj\Debug\net6.0\Assesment.csproj.AssemblyReference.cache
+D:\Code\C#\ncea-assesment-1\obj\Debug\net6.0\Assesment.GeneratedMSBuildEditorConfig.editorconfig
+D:\Code\C#\ncea-assesment-1\obj\Debug\net6.0\Assesment.AssemblyInfoInputs.cache
+D:\Code\C#\ncea-assesment-1\obj\Debug\net6.0\Assesment.AssemblyInfo.cs
+D:\Code\C#\ncea-assesment-1\obj\Debug\net6.0\Assesment.csproj.CoreCompileInputs.cache
+D:\Code\C#\ncea-assesment-1\obj\Debug\net6.0\Assesment.dll
+D:\Code\C#\ncea-assesment-1\obj\Debug\net6.0\ref\Assesment.dll
+D:\Code\C#\ncea-assesment-1\obj\Debug\net6.0\Assesment.pdb
+D:\Code\C#\ncea-assesment-1\obj\Debug\net6.0\Assesment.genruntimeconfig.cache

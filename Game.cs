@@ -192,7 +192,7 @@ class Game
     {
 
         // Actions menu and indexes
-        string[][] menu = {
+        string[][] actionsMenuStr = {
 
             new string[] {"01", "Attack", "02", "Reason"},
             new string[] {"03", "Flee", "04", "Do Nothing"}
@@ -200,18 +200,10 @@ class Game
         };
 
         // Create seperate array for actions to be accessed by index input
-        string[] menuActions = {"Attack", "Reason", "Flee", "Do Nothing"};
-        string[][][] menuSecondaryActions = {
-
-            new string[][] {new string[] {}},
-            new string[][] {},
-            new string[][] {},
-            new string[][] {}
-
-        };
+        string[] menuActionsStr = {"Attack", "Reason", "Flee", "Do Nothing"};
 
         // Use Util.getMenu() to create a menu
-        string actionsMenu = Util.getMenu(menu, 10);
+        string actionsMenu = Util.getMenu(actionsMenuStr, 10);
 
         // Player settings
         int playerHealth = 20;
@@ -220,6 +212,16 @@ class Game
         // Dragon settings
         int dragonHealth = 50;
         int dragonDamage = 8;
+
+        // Outcomes of action choices
+        string[][] actionOutcomesString = {
+
+            new string[] {$"You deal {playerDamage} damage!"},
+            new string[] {"You talk about maybe just getting a coffee and leaving this battle for later... The dragon agrees and you exit the battle"},
+            new string[] {"You try and run away, but the dragon stops you and eats you"},
+            new string[] {"You and the dragon stare blankly at eachother..."}
+
+        };
 
         // Dragon ASCII art
         string[][] asciiDragon = {
@@ -349,48 +351,91 @@ class Game
         };
 
         // Create lambda expression to display secondary action menu items corresponding to index of user
-        Action<int> displaySecondaryActions = index =>
+        Action<int> printOutcome = index =>
         {
 
-            //
+            Console.Clear();
+            // Print action outcomes at the index of the user input
+            Util.staggeredPrint(actionOutcomesString[index][0]);
 
         };
 
         // 'Use Util.getMenu()' to create a boxed title
-        string[][] title = {new string[] {"dragon Battle"}};
+        string[][] title = {new string[] {"Dragon Battle"}};
         string boxedTitle = Util.getMenu(title, 20);
         Console.WriteLine(boxedTitle, ConsoleColor.Magenta);
 
         // Welcome player
         Util.staggeredPrint($"Well hello there {playerData[0]},", ConsoleColor.DarkYellow);
         Util.stagWait();
-        Util.staggeredPrint($"Welcome to the second trial", ConsoleColor.DarkYellow);
+        Util.staggeredPrint("Welcome to the second trial", ConsoleColor.DarkYellow);
         Util.stagWait();
-        Util.staggeredPrint($"To reach the next level, you must defeat me!", ConsoleColor.DarkYellow, 100);
+        Util.staggeredPrint("To reach the next level, you must defeat me!", ConsoleColor.DarkYellow, 100);
 
         Console.Clear();
 
+        displayBattle(0);
+
+        int actionIndex = 0;
+
+        // Loop through the battle scene until the user picks the right action or fails
+        while (actionIndex != 2) {
+
+            // Get user action choice
+            Console.Write("Enter action num\n> ");
+
+            actionIndex = 0;
+
+            try 
+            {
+
+                actionIndex = int.Parse(Console.ReadLine());
+
+            } catch (FormatException)
+            {
+
+                goto failActionIndex;
+
+            }
+
+            if (Util.inRange(actionIndex, 1, 4))
+            {
+
+                // Minus 1 because indexes start at 0
+                actionIndex--;
+                printOutcome(actionIndex);
+
+                // Print battle scene if the user doesn't choose the right action
+                Util.stagWait();
+                Util.staggeredPrint("But nothing happened...");
+                Util.stagWait();
+                Console.Clear();
+
+                displayBattle(0);
+
+                Thread.Sleep(5000);
+
+            } else { goto failActionIndex; }
+
+            failActionIndex:
+
+                Console.Clear();
+                Util.staggeredPrint("You failed at completing a very simple task", ConsoleColor.Yellow);
+                Util.stagWait();
+                Util.staggeredPrint("You are so embarrassed that you instantly combust", ConsoleColor.Yellow);
+                Util.stagWait();
+                Util.staggeredPrint("Thanks for playing :)", ConsoleColor.Green);
+                Thread.Sleep(5000);
+                Environment.Exit(0);
+
+            }
+
+        Util.staggeredPrint("The dragon got scared of your little wooden sword and died of freight...");
+        Thread.Sleep(1000);
+        dragonHealth = 0;
         displayBattle(1);
-
-        // Get user action choice
-        Console.Write("Enter action num\n> ");
-
-        try 
-        {
-
-            int actionIndex = int.Parse(Console.ReadLine());
-
-            // Minus 1 because indexes start at 0
-         actionIndex--;
-
-        } catch (FormatException)
-        {
-
-            //
-
-        }
-
-        Thread.Sleep(9999999);
+        Thread.Sleep(1000);
+        return;
 
     }
 
