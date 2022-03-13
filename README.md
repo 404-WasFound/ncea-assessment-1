@@ -63,7 +63,7 @@
 
 **03/03/2022 - 05/03/2022**
 - Better formatting implemented in `README.md`.
-    - Includes titles, dates, descriptions, outline, tables, and subtitles, and subdescriptions.
+    - Includes titles, dates, descriptions, outline, tables, and subtitles, and sub-descriptions.
 
 **06/03/2022**
 - Created `Util.getMenu(dynamic[][] data, int maxItemStringLength)` and `Util.getKey(ConsoleKey key)`.
@@ -78,6 +78,42 @@
 - Added ASCII art for battle and menus / HUD in `Game.game2()`.
     - Creates a 1 - 4 action choice menu, displays dragon ASCII art, displays player and dragon stats.
 
+**09/03/2022**
+- Created actions and better battle scene in `Game.game2()`.
+    - Displays 4 different actions
+
 **Debugging**
-| Field | Expected Type | Input | Expected Output | Recived Output | Errors | Date |
-| ----- | ------------- | ----- | --------------- | -------------- | ------ | ---- |
+| Field  | Expected Type | Input          | Expected Output | Recived Output | Errors                        | Date       |
+|--------|---------------|----------------|-----------------|----------------|-------------------------------|------------|
+| name   | string        | "abc"          | "abc"           | "abc"          | None                          | 28/02/2022 |
+| name   | string        | 123            | Custom Error    | "123"          | Doesn't detect integers       | 28/02/2022 |
+| name   | string        | 123            | Custom Error    | Custom Error   | None                          | 28/02/2022 |
+| name   | string        | ""             | Custom Error    | Custom Error   | None                          | 29/02/2022 |
+| age    | int           | 123            | 123             | 123            | None                          | 01/03/2022 |
+| age    | int           | "abc"          | Custom Error    | Error          | Doesn't detect strings        | 01/03/2022 |
+| age    | int           | "abc"          | Custom Error    | Custom Error   | None                          | 01/03/2022 |
+| age    | int           | ""             | Custom Error    | Custom Error   | None                          | 02/03/2022 |
+| answer | string        | "test"         | "Fail"          | Error          | Quits program if answer wrong | 05/03/2022 |
+| answer | string        | "test"         | "Fail"          | "Fail"         | None                          | 05/03/2022 |
+| answer | string        | 123            | "Fail"          | "Fail"         | None                          | 05/03/2022 |
+| answer | string        | "right answer" | "Pass"          | "Pass"         | None                          | 06/03/2022 |
+|        |               |                |                 |                |                               |            |
+|        |               |                |                 |                |                               |            |
+|        |               |                |                 |                |                               |            |
+|        |               |                |                 |                |                               |            |
+|        |               |                |                 |                |                               |            |
+|        |               |                |                 |                |                               |            |
+|        |               |                |                 |                |                               |            |
+|        |               |                |                 |                |                               |            |
+|        |               |                |                 |                |                               |            |
+|        |               |                |                 |                |                               |            |
+|        |               |                |                 |                |                               |            |
+|        |               |                |                 |                |                               |            |
+|        |               |                |                 |                |                               |            |
+|        |               |                |                 |                |                               |            |
+|        |               |                |                 |                |                               |            |
+|        |               |                |                 |                |                               |            |
+|        |               |                |                 |                |                               |            |
+|        |               |                |                 |                |                               |            |
+|        |               |                |                 |                |                               |            |
+|        |               |                |                 |                |                               |            |
