@@ -362,7 +362,7 @@ class Game
 
         // 'Use Util.getMenu()' to create a boxed title
         string[][] title = {new string[] {"Dragon Battle"}};
-        string boxedTitle = Util.getMenu(title, 20);
+        string boxedTitle = Util.getMenu(title, "Dragon Battle".Length);
         Console.WriteLine(boxedTitle, ConsoleColor.Magenta);
 
         // Welcome player
@@ -379,70 +379,186 @@ class Game
         int actionIndex = 0;
 
         // Loop through the battle scene until the user picks the right action or fails
-        while (actionIndex != 2) {
+        while (true)
+        {
 
-            // Get user action choice
-            Console.Write("Enter action num\n> ");
+            Console.Write("Enter action num: ");
 
-            actionIndex = 0;
-
-            try 
+            try
             {
 
                 actionIndex = int.Parse(Console.ReadLine());
 
+                if (!Util.inRange(actionIndex, 1, 4))
+                {
+
+                    Util.staggeredPrint("Input error, please select a number between 1 and 4");
+
+                } else
+                {
+
+                    Console.Clear();
+                    // Minus 1 to get index then print outcome of choice
+                    printOutcome(actionIndex - 1);
+                    Util.stagWait();
+                    break;
+
+                }
+
             } catch (FormatException)
             {
 
-                goto failActionIndex;
+                Util.staggeredPrint("Input error, please select a number between 1 and 4");
 
             }
 
-            if (Util.inRange(actionIndex, 1, 4))
-            {
+        }
 
-                // Minus 1 because indexes start at 0
-                actionIndex--;
-                printOutcome(actionIndex);
+        if (actionIndex == 1 || actionIndex == 2)
+        {
 
-                // Print battle scene if the user doesn't choose the right action
-                Util.stagWait();
-                Util.staggeredPrint("But nothing happened...");
-                Util.stagWait();
-                Console.Clear();
+            // Congratulate user on passing second trial
+            Console.Clear();
+            Util.staggeredPrint("You passed the second trial!", ConsoleColor.Green);
+            Util.stagWait();
+            Util.staggeredPrint("Now onto the final trial...", ConsoleColor.Green);
+            Util.stagWait();
+            // End game2
+            return;
 
-                displayBattle(0);
-
-                Thread.Sleep(5000);
-
-            } else { goto failActionIndex; }
-
-            failActionIndex:
-
-                Console.Clear();
-                Util.staggeredPrint("You failed at completing a very simple task", ConsoleColor.Yellow);
-                Util.stagWait();
-                Util.staggeredPrint("You are so embarrassed that you instantly combust", ConsoleColor.Yellow);
-                Util.stagWait();
-                Util.staggeredPrint("Thanks for playing :)", ConsoleColor.Green);
-                Thread.Sleep(5000);
-                Environment.Exit(0);
-
-            }
-
-        Util.staggeredPrint("The dragon got scared of your little wooden sword and died of freight...");
-        Thread.Sleep(1000);
-        dragonHealth = 0;
-        displayBattle(1);
-        Thread.Sleep(1000);
-        return;
+        } else { 
+            
+            Util.staggeredPrint("Sadly you failed this trial...", ConsoleColor.Green); 
+            Util.stagWait();
+            Util.staggeredPrint("Thanks for playing!", ConsoleColor.Green);
+            Thread.Sleep(1500);
+            Environment.Exit(0);
+        
+        }
 
     }
 
-    public static void game3()
+    public static void game3(dynamic[] playerData)
     {
 
-        //
+        // list of past user choices
+        List<int> chosenDoors = new List<int> {};
+        int guesses = 3;
+
+        // Answer
+        bool[] answers = {false, false, false, true, false};
+
+        // Doors ASCII art
+        string[] doorsAsciiArt = {
+
+            "+============+   +============+   +============+   +============+   +============+",
+            "|            |   |            |   |            |   |            |   |            |",
+            "| +-+-++-+-+ |   | +-+-++-+-+ |   | +-+-++-+-+ |   | +-+-++-+-+ |   | +-+-++-+-+ |",
+            "| | | || | | |   | | | || | | |   | | | || | | |   | | | || | | |   | | | || | | |",
+            "| | | || | | |   | | | || | | |   | | | || | | |   | | | || | | |   | | | || | | |",
+            "| +-+-++-+-+ |   | +-+-++-+-+ |   | +-+-++-+-+ |   | +-+-++-+-+ |   | +-+-++-+-+ |",
+            "|            |   |            |   |            |   |            |   |            |",
+            "| 1      ==+ |   | 2      ==+ |   | 3      ==+ |   | 4      ==+ |   | 5      ==+ |",
+            "|          ] |   |          ] |   |          ] |   |          ] |   |          ] |",
+            "|            |   |            |   |            |   |            |   |            |",
+            "|            |   |            |   |            |   |            |   |            |",
+            "|            |   |            |   |            |   |            |   |            |",
+            "|            |   |            |   |            |   |            |   |            |",
+            "+============+   +============+   +============+   +============+   +============+"
+
+        };
+
+        // Create boxed title with Util.getMenu()
+        string[][] title = {new string[] {"Door Game"}};
+        string boxedTitle = Util.getMenu(title, "Door Game".Length);
+        Console.WriteLine(boxedTitle, ConsoleColor.Green);
+
+        // Welcome user to final trial and explain the game
+        Util.staggeredPrint($"Well done {playerData[0]}", ConsoleColor.Green);
+        Util.stagWait();
+        Util.staggeredPrint("Welcome to the final trial!", ConsoleColor.Green);
+        Util.stagWait();
+        Util.staggeredPrint("To exit the dungeon, you must pick the right door", ConsoleColor.Green);
+        Util.stagWait();
+        Util.staggeredPrint("You will have 3 guesses the guess between 5 doors", ConsoleColor.Green);
+        Util.stagWait();
+        Util.staggeredPrint("Good luck!", ConsoleColor.Green, 100);
+        Thread.Sleep(1000);
+
+        // Start the game
+        Console.WriteLine("CHOOSE A DOOR");
+
+        // Repeat util user has used all their guesses
+        while (guesses > 0)
+        {
+
+            // User door choice
+            int chosenDoor = 0;
+
+            // Print the doors ASCII art
+            foreach (string line in doorsAsciiArt)
+            {
+
+                Console.WriteLine(line);
+
+            }
+
+            // Get user input
+            Console.WriteLine("\n");
+            Console.WriteLine("Choose a door (cannot be a door you have chosen prviously)");
+
+            while (true)
+            {
+
+                Console.Write("> ");
+
+                // Detect if user doesn't enter a number between 1 - 5, or a number in general
+                try
+                {
+
+                    // Get user to pick a door
+                    chosenDoor = int.Parse(Console.ReadLine());
+
+                    if (!Util.inRange(chosenDoor, 1, 5))
+                    {
+
+                        Util.staggeredPrint("Please enter a number between 1 and 5, or a number you haven't already entered");
+                        Util.stagWait();
+
+                    } else { break; }
+
+                } catch (FormatException)
+                {
+
+                    Util.staggeredPrint("Please only enter numbers");
+
+                }
+
+            }
+
+            if (Util.inRange(chosenDoor, 1, 5) && !chosenDoors.Contains(chosenDoor))
+            {
+
+                guesses--;
+                chosenDoors.Add(chosenDoor);
+
+                if (answers[chosenDoor - 1] == true)
+                {
+
+                    Util.staggeredPrint("You got it right!");
+                    Util.stagWait();
+                    Util.staggeredPrint("Good job!");
+                    Util.stagWait();
+                    Util.staggeredPrint("Thanks for playing :)");
+                    Thread.Sleep(1500);
+
+                } else { Util.staggeredPrint($"Nope, wrong, {guesses} left"); }
+
+            }
+
+            Console.Clear();
+
+        }        
 
     }
 
