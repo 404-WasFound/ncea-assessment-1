@@ -442,8 +442,10 @@ class Game
     {
 
         // list of past user choices
-        List<int> chosenDoors = new List<int> {};
-        int guesses = 3;
+        List<int> totalGuesses = new List<int> {};
+
+        bool acceptedGuess = false;
+        int guess = 0;
 
         // Answer
         bool[] answers = {false, false, false, true, false};
@@ -489,74 +491,96 @@ class Game
         Console.WriteLine("CHOOSE A DOOR");
 
         // Repeat util user has used all their guesses
+        int guesses = 3;
+
         while (guesses > 0)
         {
 
-            // User door choice
-            int chosenDoor = 0;
-
-            // Print the doors ASCII art
-            foreach (string line in doorsAsciiArt)
+            while (!acceptedGuess)
             {
 
-                Console.WriteLine(line);
+                Console.Clear();
+                
+                // Print door ASCII art
+                foreach (string line in doorsAsciiArt)
+                {
 
-            }
+                    Console.ForegroundColor = ConsoleColor.Magenta;
+                    Console.WriteLine(line);
 
-            // Get user input
-            Console.WriteLine("\n");
-            Console.WriteLine("Choose a door (cannot be a door you have chosen prviously)");
+                }
 
-            while (true)
-            {
+                // Get user input
+                Console.Write("Enter a number between 1 and 5 (Note that you cannot enter the same number twice)\n> ");
 
-                Console.Write("> ");
-
-                // Detect if user doesn't enter a number between 1 - 5, or a number in general
                 try
                 {
 
-                    // Get user to pick a door
-                    chosenDoor = int.Parse(Console.ReadLine());
-
-                    if (!Util.inRange(chosenDoor, 1, 5))
-                    {
-
-                        Util.staggeredPrint("Please enter a number between 1 and 5, or a number you haven't already entered");
-                        Util.stagWait();
-
-                    } else { break; }
+                    guess = int.Parse(Console.ReadLine());
+                    acceptedGuess = true;
 
                 } catch (FormatException)
                 {
 
-                    Util.staggeredPrint("Please only enter numbers");
+                    Util.staggeredPrint("Please only enter numbers", ConsoleColor.Yellow);
+                    acceptedGuess = false;
 
                 }
 
             }
 
-            if (Util.inRange(chosenDoor, 1, 5) && !chosenDoors.Contains(chosenDoor))
+            // Check if user guess is between 1 and 5
+            if (Util.inRange(guess, 1, 5))
             {
 
-                guesses--;
-                chosenDoors.Add(chosenDoor);
-
-                if (answers[chosenDoor - 1] == true)
+                if (!totalGuesses.Contains(guess))
                 {
 
-                    Util.staggeredPrint("You got it right!");
-                    Util.stagWait();
-                    Util.staggeredPrint("Good job!");
-                    Util.stagWait();
-                    Util.staggeredPrint("Thanks for playing :)");
-                    Thread.Sleep(1500);
+                    if (answers[guess - 1] == true)
+                    {
 
-                } else { Util.staggeredPrint($"Nope, wrong, {guesses} left"); }
+                        Console.Clear();
+                        Util.staggeredPrint("Well done!", ConsoleColor.Green);
+                        Util.stagWait();
+                        Util.staggeredPrint("You completed the final trial and made it through the dungeon!", 
+                           ConsoleColor.Green);
+                        Util.stagWait();
+                        Util.staggeredPrint("Thanks for playing!", ConsoleColor.Green);
+                        Thread.Sleep(1500);
+                        Environment.Exit(0);
+
+                    } else
+                    {
+
+                        Util.staggeredPrint("Nope, wrong door", ConsoleColor.Yellow);
+                        Util.stagWait();
+                        guesses--;
+                        Util.staggeredPrint($"You have {guesses} guesses left", ConsoleColor.Yellow);
+                        Util.stagWait();
+                        Console.Clear();
+                        totalGuesses.Add(guess);
+                        acceptedGuess = false;
+
+                    }
+
+                } else
+                {
+
+                    Util.staggeredPrint($"You already guesses {guess}", ConsoleColor.Yellow);
+                    Util.stagWait();
+                    acceptedGuess = false;
+
+                }
 
             }
 
-            Console.Clear();
+            if (!Util.inRange(guess, 1, 5))
+            {
+
+                Util.staggeredPrint("Please only user numbers between 1 and 5", ConsoleColor.Yellow);
+                acceptedGuess = false;
+
+            }
 
         }        
 

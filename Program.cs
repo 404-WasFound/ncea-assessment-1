@@ -30,12 +30,12 @@ public class Program
         // Game.game1(playerData);
 
         // Call 'game2()' to start game2, but wait time in between
-        // Game.changeGame();
-        // Game.game2(playerData);
+        Game.changeGame();
+        Game.game2(playerData);
 
         // Call 'game3()' to start game3, but wait time in between
-        Game.changeGame();
-        Game.game3(playerData);
+        //Game.changeGame();
+        //Game.game3(playerData);
 
         Thread.Sleep(100000);
 

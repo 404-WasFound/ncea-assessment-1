@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Code\\C#\\ncea-assesment-1\\Assesment.csproj",
+      "projectUniqueName": "D:\\Code\\C#\\ncea-assessment-1\\Assesment.csproj",
       "projectName": "Assesment",
-      "projectPath": "D:\\Code\\C#\\ncea-assesment-1\\Assesment.csproj",
+      "projectPath": "D:\\Code\\C#\\ncea-assessment-1\\Assesment.csproj",
       "packagesPath": "C:\\Users\\malac\\.nuget\\packages\\",
-      "outputPath": "D:\\Code\\C#\\ncea-assesment-1\\obj\\",
+      "outputPath": "D:\\Code\\C#\\ncea-assessment-1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\malac\\AppData\\Roaming\\NuGet\\NuGet.Config",
