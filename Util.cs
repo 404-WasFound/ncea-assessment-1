@@ -5,7 +5,7 @@ class Util
     {
 
         // Check if 'num' is between
-        if (num >= min || num <= max)
+        if (num >= min && num <= max)
         {
 
             return true;

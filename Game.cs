@@ -78,7 +78,7 @@ class Game
 
     }
 
-    public static void game1(dynamic[] playerData)
+    public static bool game1(dynamic[] playerData)
     {
 
         // Riddles and answers
@@ -166,6 +166,7 @@ class Game
                 Util.staggeredPrint("Hmm, you failed some of the riddles", ConsoleColor.Red);
                 Util.stagWait();
                 Util.staggeredPrint("But you got some right so I'll let you pass", ConsoleColor.Red);
+                return true;
 
             }
 
@@ -180,15 +181,17 @@ class Game
             Thread.Sleep(500);
             Util.staggeredPrint("Thanks for playing :)", ConsoleColor.Yellow);
             Thread.Sleep(500);
-            Environment.Exit(0);
+            return false;
 
         }
 
         #endregion
 
+        return false;
+
     }
 
-    public static void game2(dynamic[] playerData)
+    public static bool game2(dynamic[] playerData)
     {
 
         // Actions menu and indexes
@@ -224,51 +227,28 @@ class Game
         };
 
         // Dragon ASCII art
-        string[][] asciiDragon = {
+        string[] asciiDragon = {
 
             // Use '@' to allow escape characters
-            new string[] { // Colour: Red
 
-                @" <>=======()",
-                @"(/\___   /|\\          ()==========<>_",
-                @"      \_/ | \\        //|\   ______/ \)",
-                @"        \_|  \\      // | \_/",
-                @"          \|\/|\_   //  /\/",
-                @"           (**)\ \_//  /",
-                @"          //_/\_\/ /  |",
-                @"         @@/  |=\  \  |",
-                @"              \_=\_ \ |",
-                @"                \==\ \|\_",
-                @"             __(\===\(  )\",
-                @"            (((~) __(_/   |",
-                @"                 (((~) \  /",
-                @"                 ______/ /",
-                @"                 '------'"
+            @" <>=======()",
+            @"(/\___   /|\\          ()==========<>_",
+            @"      \_/ | \\        //|\   ______/ \)",
+            @"        \_|  \\      // | \_/",
+            @"          \|\/|\_   //  /\/",
+            @"           (**)\ \_//  /",
+            @"          //_/\_\/ /  |",
+            @"         @@/  |=\  \  |",
+            @"              \_=\_ \ |",
+            @"                \==\ \|\_",
+            @"             __(\===\(  )\",
+            @"            (((~) __(_/   |",
+            @"                 (((~) \  /",
+            @"                 ______/ /",
+            @"                 '------'"
 
-            },
-
-            new string[] { // Colour: Grey
-
-                @" <>=======()",
-                @"(/\___   /|\\          ()==========<>_",
-                @"      \_/ | \\        //|\   ______/ \)",
-                @"        \_|  \\      // | \_/",
-                @"          \|\/|\_   //  /\/",
-                @"           (Xx)\ \_//  /",
-                @"          //_/\_\/ /  |",
-                @"         @@/  |=\  \  |",
-                @"              \_=\_ \ |",
-                @"                \==\ \|\_",
-                @"             __(\===\(  )\",
-                @"            (((~) __(_/   |",
-                @"                 (((~) \  /",
-                @"                 ______/ /",
-                @"                 '------'"
-
-            }
 
         };
-        ConsoleColor[] asciiDragonColours = new ConsoleColor[] {ConsoleColor.Red, ConsoleColor.Yellow};
 
         // Lambda expression to print ascii art as colour corresponding to index
         Action<int> printAsciidragon = index => 
@@ -276,14 +256,14 @@ class Game
 
             string final = "";
 
-            foreach (string line in asciiDragon[index])
+            foreach (string line in asciiDragon)
             {
 
                 final += line + "\n";
 
             }
 
-            Console.ForegroundColor = asciiDragonColours[index];
+            Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine(final);
             Console.ForegroundColor = ConsoleColor.White;
 
@@ -320,8 +300,8 @@ class Game
 
             // Print actions menu and dragon ascii
             Console.WriteLine(dragonMenu);
-            Console.ForegroundColor = asciiDragonColours[index];
-            foreach (string line in asciiDragon[index])
+            Console.ForegroundColor = ConsoleColor.Red;
+            foreach (string line in asciiDragon)
             {
 
                 Console.WriteLine(line);
@@ -424,7 +404,7 @@ class Game
             Util.staggeredPrint("Now onto the final trial...", ConsoleColor.Green);
             Util.stagWait();
             // End game2
-            return;
+            return true;
 
         } else { 
             
@@ -432,18 +412,20 @@ class Game
             Util.stagWait();
             Util.staggeredPrint("Thanks for playing!", ConsoleColor.Green);
             Thread.Sleep(1500);
-            Environment.Exit(0);
+            return false;
         
         }
 
     }
 
-    public static void game3(dynamic[] playerData)
+    public static bool game3(dynamic[] playerData)
     {
 
         // list of past user choices
-        List<int> chosenDoors = new List<int> {};
-        int guesses = 3;
+        List<int> totalGuesses = new List<int> {};
+
+        bool acceptedGuess = false;
+        int guess = 0;
 
         // Answer
         bool[] answers = {false, false, false, true, false};
@@ -480,91 +462,147 @@ class Game
         Util.stagWait();
         Util.staggeredPrint("To exit the dungeon, you must pick the right door", ConsoleColor.Green);
         Util.stagWait();
-        Util.staggeredPrint("You will have 3 guesses the guess between 5 doors", ConsoleColor.Green);
+        Util.staggeredPrint("You will have 3 guesses to guess between 5 doors", ConsoleColor.Green);
         Util.stagWait();
         Util.staggeredPrint("Good luck!", ConsoleColor.Green, 100);
         Thread.Sleep(1000);
 
         // Start the game
-        Console.WriteLine("CHOOSE A DOOR");
 
         // Repeat util user has used all their guesses
+        int guesses = 3;
+
         while (guesses > 0)
         {
 
-            // User door choice
-            int chosenDoor = 0;
-
-            // Print the doors ASCII art
-            foreach (string line in doorsAsciiArt)
+            while (!acceptedGuess)
             {
 
-                Console.WriteLine(line);
+                Console.Clear();
+                
+                // Print door ASCII art
+                foreach (string line in doorsAsciiArt)
+                {
 
-            }
+                    Console.ForegroundColor = ConsoleColor.Magenta;
+                    Console.WriteLine(line);
 
-            // Get user input
-            Console.WriteLine("\n");
-            Console.WriteLine("Choose a door (cannot be a door you have chosen prviously)");
+                }
 
-            while (true)
-            {
+                // Get user input
+                Console.Write("Enter a number between 1 and 5 (Note that you cannot enter the same number twice)\n> ");
 
-                Console.Write("> ");
-
-                // Detect if user doesn't enter a number between 1 - 5, or a number in general
                 try
                 {
 
-                    // Get user to pick a door
-                    chosenDoor = int.Parse(Console.ReadLine());
-
-                    if (!Util.inRange(chosenDoor, 1, 5))
-                    {
-
-                        Util.staggeredPrint("Please enter a number between 1 and 5, or a number you haven't already entered");
-                        Util.stagWait();
-
-                    } else { break; }
+                    guess = int.Parse(Console.ReadLine());
+                    acceptedGuess = true;
 
                 } catch (FormatException)
                 {
 
-                    Util.staggeredPrint("Please only enter numbers");
+                    Util.staggeredPrint("Please only enter numbers", ConsoleColor.Yellow);
+                    acceptedGuess = false;
 
                 }
 
             }
 
-            if (Util.inRange(chosenDoor, 1, 5) && !chosenDoors.Contains(chosenDoor))
+            // Check if user guess is between 1 and 5
+            if (Util.inRange(guess, 1, 5))
             {
 
-                guesses--;
-                chosenDoors.Add(chosenDoor);
-
-                if (answers[chosenDoor - 1] == true)
+                if (!totalGuesses.Contains(guess))
                 {
 
-                    Util.staggeredPrint("You got it right!");
-                    Util.stagWait();
-                    Util.staggeredPrint("Good job!");
-                    Util.stagWait();
-                    Util.staggeredPrint("Thanks for playing :)");
-                    Thread.Sleep(1500);
+                    if (answers[guess - 1] == true)
+                    {
 
-                } else { Util.staggeredPrint($"Nope, wrong, {guesses} left"); }
+                        Console.Clear();
+                        Util.staggeredPrint("Well done!", ConsoleColor.Green);
+                        Util.stagWait();
+                        Util.staggeredPrint("You completed the final trial and made it through the dungeon!", 
+                           ConsoleColor.Green);
+                        Util.stagWait();
+                        Util.staggeredPrint("Thanks for playing!", ConsoleColor.Green);
+                        Thread.Sleep(1500);
+                        return true;
+
+                    } else
+                    {
+
+                        Util.staggeredPrint("Nope, wrong door", ConsoleColor.Yellow);
+                        Util.stagWait();
+                        guesses--;
+                        Util.staggeredPrint($"You have {guesses} guesses left", ConsoleColor.Yellow);
+                        Util.stagWait();
+                        Console.Clear();
+                        totalGuesses.Add(guess);
+                        acceptedGuess = false;
+
+                    }
+
+                } else
+                {
+
+                    Util.staggeredPrint($"You already guessed {guess}", ConsoleColor.Yellow);
+                    Util.stagWait();
+                    acceptedGuess = false;
+
+                }
 
             }
 
-            Console.Clear();
+            if (!Util.inRange(guess, 1, 5))
+            {
 
-        }        
+                Util.staggeredPrint("Please only user numbers between 1 and 5", ConsoleColor.Yellow);
+                acceptedGuess = false;
+
+            }
+
+            if (guesses == 0)
+            {
+
+                return false;
+
+            }
+
+        }
+
+        return false;       
+
+    }
+
+    public static bool outro()
+    {
+
+        // Ask user if they want to play again
+        Util.staggeredPrint("Do you want to play again? (Y/N)", ConsoleColor.Green);
+        Console.Write("> ");
+        string choice = Console.ReadLine().ToLower();
+
+        if (choice == "y")
+        {
+
+            return true;
+
+        }
+
+        // If they don't enter y or an expected value, the game will just stop
+        else
+        {
+
+            return false;
+
+        }
 
     }
 
     public static void changeGame()
     {
 
+        // Clear console and wait time inbetween games
         Console.Clear();
         Thread.Sleep(1500);
 
