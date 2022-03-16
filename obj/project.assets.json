@@ -13,11 +13,19 @@
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "\\\\internal.lbc.school.nz\\users\\home\\students\\20234\\documents\\!DTS NCEA 1\\ncea-assesment-1-main\\ncea-assesment-1\\Assesment.csproj",
       "projectName": "Assesment",
       "projectPath": "\\\\internal.lbc.school.nz\\users\\home\\students\\20234\\documents\\!DTS NCEA 1\\ncea-assesment-1-main\\ncea-assesment-1\\Assesment.csproj",
       "packagesPath": "C:\\Users\\20234\\.nuget\\packages\\",
       "outputPath": "\\\\internal.lbc.school.nz\\users\\home\\students\\20234\\documents\\!DTS NCEA 1\\ncea-assesment-1-main\\ncea-assesment-1\\obj\\",
+=======
+      "projectUniqueName": "D:\\Code\\C#\\ncea-assessment-1\\Assesment.csproj",
+      "projectName": "Assesment",
+      "projectPath": "D:\\Code\\C#\\ncea-assessment-1\\Assesment.csproj",
+      "packagesPath": "C:\\Users\\malac\\.nuget\\packages\\",
+      "outputPath": "D:\\Code\\C#\\ncea-assessment-1\\obj\\",
+>>>>>>> 2fcf069bdad462d9bf3a3237dab30874bd9ce9df
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\20234\\AppData\\Roaming\\NuGet\\NuGet.Config"

@@ -1,8 +1,14 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "5qXHtfh6RdNv2C+HeO3mMhC2nM7tZlVfRX+KtTjl0XBzkKQBc3UvL5e3CsihT5AAQaBFbFUoWNfT4Miw8n4/qQ==",
   "success": true,
   "projectFilePath": "\\\\internal.lbc.school.nz\\users\\home\\students\\20234\\documents\\!DTS NCEA 1\\ncea-assesment-1-main\\ncea-assesment-1\\Assesment.csproj",
+=======
+  "dgSpecHash": "1Y1DySRfFjz68ENx24Gc3Mt91LKZIDNZzZi4BgH0USYoLkw36df5seq3pIJS4ll/fKO43jsvSr7qLc3nrUcDsQ==",
+  "success": true,
+  "projectFilePath": "D:\\Code\\C#\\ncea-assessment-1\\Assesment.csproj",
+>>>>>>> 2fcf069bdad462d9bf3a3237dab30874bd9ce9df
   "expectedPackageFiles": [],
   "logs": []
 }
