@@ -224,51 +224,28 @@ class Game
         };
 
         // Dragon ASCII art
-        string[][] asciiDragon = {
+        string[] asciiDragon = {
 
             // Use '@' to allow escape characters
-            new string[] { // Colour: Red
 
-                @" <>=======()",
-                @"(/\___   /|\\          ()==========<>_",
-                @"      \_/ | \\        //|\   ______/ \)",
-                @"        \_|  \\      // | \_/",
-                @"          \|\/|\_   //  /\/",
-                @"           (**)\ \_//  /",
-                @"          //_/\_\/ /  |",
-                @"         @@/  |=\  \  |",
-                @"              \_=\_ \ |",
-                @"                \==\ \|\_",
-                @"             __(\===\(  )\",
-                @"            (((~) __(_/   |",
-                @"                 (((~) \  /",
-                @"                 ______/ /",
-                @"                 '------'"
+            @" <>=======()",
+            @"(/\___   /|\\          ()==========<>_",
+            @"      \_/ | \\        //|\   ______/ \)",
+            @"        \_|  \\      // | \_/",
+            @"          \|\/|\_   //  /\/",
+            @"           (**)\ \_//  /",
+            @"          //_/\_\/ /  |",
+            @"         @@/  |=\  \  |",
+            @"              \_=\_ \ |",
+            @"                \==\ \|\_",
+            @"             __(\===\(  )\",
+            @"            (((~) __(_/   |",
+            @"                 (((~) \  /",
+            @"                 ______/ /",
+            @"                 '------'"
 
-            },
-
-            new string[] { // Colour: Grey
-
-                @" <>=======()",
-                @"(/\___   /|\\          ()==========<>_",
-                @"      \_/ | \\        //|\   ______/ \)",
-                @"        \_|  \\      // | \_/",
-                @"          \|\/|\_   //  /\/",
-                @"           (Xx)\ \_//  /",
-                @"          //_/\_\/ /  |",
-                @"         @@/  |=\  \  |",
-                @"              \_=\_ \ |",
-                @"                \==\ \|\_",
-                @"             __(\===\(  )\",
-                @"            (((~) __(_/   |",
-                @"                 (((~) \  /",
-                @"                 ______/ /",
-                @"                 '------'"
-
-            }
 
         };
-        ConsoleColor[] asciiDragonColours = new ConsoleColor[] {ConsoleColor.Red, ConsoleColor.Yellow};
 
         // Lambda expression to print ascii art as colour corresponding to index
         Action<int> printAsciidragon = index => 
@@ -276,14 +253,14 @@ class Game
 
             string final = "";
 
-            foreach (string line in asciiDragon[index])
+            foreach (string line in asciiDragon)
             {
 
                 final += line + "\n";
 
             }
 
-            Console.ForegroundColor = asciiDragonColours[index];
+            Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine(final);
             Console.ForegroundColor = ConsoleColor.White;
 
@@ -320,8 +297,8 @@ class Game
 
             // Print actions menu and dragon ascii
             Console.WriteLine(dragonMenu);
-            Console.ForegroundColor = asciiDragonColours[index];
-            foreach (string line in asciiDragon[index])
+            Console.ForegroundColor = ConsoleColor.Red;
+            foreach (string line in asciiDragon)
             {
 
                 Console.WriteLine(line);
