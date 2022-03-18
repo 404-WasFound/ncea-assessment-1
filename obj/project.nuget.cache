@@ -1,8 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "1Y1DySRfFjz68ENx24Gc3Mt91LKZIDNZzZi4BgH0USYoLkw36df5seq3pIJS4ll/fKO43jsvSr7qLc3nrUcDsQ==",
+  "dgSpecHash": "OJOxrI5z2x1wD1OTFI4YGnQ6gCM272owc50WbkDuUI55FSmrGoWyeQT3bdWTEBqfmXb/pGM/mLLZfLHFOj0kkQ==",
   "success": true,
   "projectFilePath": "D:\\Code\\C#\\ncea-assessment-1\\Assesment.csproj",
   "expectedPackageFiles": [],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file D:\\Code\\C#\\ncea-assessment-1\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }
