@@ -14,17 +14,18 @@ public class Program
         // Loop boolean for game loop
         bool loop = true;
 
+        // Main game loop
         while (loop)
         {
 
             // Setup console settings
             Console.BackgroundColor = ConsoleColor.Black;
-            
+
             // Call '.Clear()' to set terminal to all DarkBlue
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.White;
 
-            // Setup variables
+            // Setup dynamic array that can only take 2 items
             dynamic[] playerData = new dynamic[2] {"", 0};
 
             //Call 'intro()' to start game
