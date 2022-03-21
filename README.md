@@ -12,7 +12,7 @@
 - Quiz style as a text-based adventure game
 
 **Pseudocode**
-- farded
+- [Pseudocode](https://www.github.com/404-wasfound/ncea-assessment-1/tree/main/pseudocode/type2.txt)
 
 # Commits
 

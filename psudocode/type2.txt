@@ -1,18 +1,18 @@
 
 [Game Program File]
-FUNCTION: "intro", PARAMS: none, RETURN TYPE: 1D multi-type array
+FUNCTION: "intro", PARAMS: none, RETURN TYPE: 1D MULTI-TYPE ARRAY
 
     1D STRING ARRAY: "outcomes", LENGTH: 2, CONTENTS: ("That's a cool name!", "That's a weird name" )
     1D INT ARRAY: "waits", LENGTH: 2, CONTENTS: (50, 100)
     INT: "num", CONTENTS: random int (0, 2)
 
-    STRING: "title", CONTENTS: Util.getMenu(), PARAMS: 2D STRING ARRAY: LENGTH: 1, CONTENTS: (("Adventure Game"))
+    STRING: "title", CONTENTS: Util.getMenu(): PARAMS: 2D STRING ARRAY: LENGTH: 1, CONTENTS: (("Adventure Game"))
     PRINTLINE title
 
-    CALL Util.staggeredPrint(), PARAMS: "Why hello adventurer!"
+    CALL Util.staggeredPrint(): PARAMS: "Why hello adventurer!"
     CALL Util.stagWait()
 
-    CALL Util.staggeredPrint(), PARAMS: "What is your name?"
+    CALL Util.staggeredPrint(): PARAMS: "What is your name?"
     PRINT "> "
 
     STRING: "name", CONTENTS: user input
@@ -22,10 +22,10 @@ FUNCTION: "intro", PARAMS: none, RETURN TYPE: 1D multi-type array
         PRINT error message
         SET name to "bob"
 
-    CALL Util.staggeredPrint(), PARAMS: "{name}..."
+    CALL Util.staggeredPrint(): PARAMS: "{name}..."
     CALL Util.stagWait()
 
-    CALL Util.staggeredPrint(), PARAMS: outcomes(INDEX: num), waits(INDEX: num)
+    CALL Util.staggeredPrint(): PARAMS: outcomes(INDEX: num), waits(INDEX: num)
     CALL Util.stagWait()
 
     STRING: "ageStr", CONTENTS: user input

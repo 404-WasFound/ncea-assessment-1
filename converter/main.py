@@ -18,7 +18,9 @@ key_words = [
     "WriteLine(",
 
     # Functions
-    "changeGame("
+    "staggeredPrint(",
+    "stagWait(",
+    "changeGame(",
     "game1(",
     "game2(",
     "game3(",
