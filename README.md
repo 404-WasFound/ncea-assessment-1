@@ -1,6 +1,6 @@
 ![Long bay college logo](https://www.longbaycollege.com/wp-content/uploads/2020/09/Long_Bay_College_Logo_Tag2-1024x141.png)
 
-# NCEA Assesment 1
+# NCEA Assessment 1 TEST
 
 ## Project Outline
 
@@ -12,7 +12,7 @@
 - Quiz style as a text-based adventure game
 
 **Pseudocode**
-- farded
+- [Pseudocode](https://github.com/404-WasFound/ncea-assessment-1/blob/main/pseudocode/type2.txt)
 
 # Commits
 
@@ -81,6 +81,17 @@
 **09/03/2022**
 - Created actions and better battle scene in `Game.game2()`.
     - Displays 4 different actions
+
+**10/03/2022**
+- Created outcomes for actions in `Game.game2()`.
+    - Has a total of 4 main options and 16 sub-options.
+
+**12/03/2022**
+- Edited battle scene and outcomes in `Game.game2()`.
+    - Now only has 4 options and outcomes.
+
+**14/03/2022**
+-
 
 **Debugging**
 | Field  | Expected Type | Input          | Expected Output | Recived Output | Errors                        | Date       |

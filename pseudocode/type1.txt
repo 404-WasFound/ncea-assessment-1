@@ -1,0 +1,33 @@
+
+[Game Program File]
+create a function called "intro" that takes no parameters and returns Nothing
+create a string array with a length of 2 containing ("That's a cool name!" and "That's a weird name"), and call it "outcomes"
+create an int array with a length of 2 containing (50 and 100), and call it "waits"
+create an int called "num" and set it to a random int between 0 and 2 (chooses from 0 - 1)
+
+create a string called "title" and use Util.getMenu() to create a boxed string by creating a 2d string array as the title and using it as the data parameter, then set the max item length to the length of the title string
+printline title (variable)
+
+call Util.staggeredPrint with "Why hello adventurer!" as param 1
+call Util.stagWait()
+
+call Util.staggeredPrint with "What is your name?" as param 1
+print "> "
+
+create a string called "name" and set it to the user's input
+
+check if the input was left empty
+
+    send an error message and set name to "Bob"
+
+call Util.staggeredPrint with "{name}..." as param 1
+call Util.stagWait()
+
+
+
+[Main Program File]
+create a bool called "loop" and set it to true
+
+create a while loop with the condition of "loop"
+
+    create a multi-type (dynamic) array with a length of 2 containing ("" and 0), and call it "playerData"
