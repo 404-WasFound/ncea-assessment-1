@@ -41,10 +41,9 @@ FUNCTION: "intro", PARAMS: none, RETURN TYPE: 1D MULTI-TYPE ARRAY
 
 FUNCTION: "game1", PARAMS: 1D MULTI-TYPE ARRAY, RETURN TYPE: none / null
 
-    STRING ARRAY: "riddles", LENGTH: 3, CONTENTS: ("What has 4 legs, but no eyes?",
+    1D STRING ARRAY: "riddles", LENGTH: 3, CONTENTS: ("What has 4 legs, but no eyes?",
                                                    "Why is 99 more than 100?",
                                                    "What do you call a liar on the phone?")
-
 
 
 
@@ -58,12 +57,12 @@ WHILE loop equals true
     SET playerData to Game.intro()
 
     CALL Game.changeGame()
-    SET loop to Game.game1(), PARAMS: playerData
+    SET loop to Game.game1(): PARAMS: playerData
 
     CALL Game.changeGame()
-    SET loop to Game.game2(), PARAMS: playerData
+    SET loop to Game.game2(): PARAMS: playerData
 
     CALL Game.changeGame()
-    SET loop to Game.game3(), PARAMS: playerData
+    SET loop to Game.game3(): PARAMS: playerData
 
 SET loop to Game.outro()

@@ -82,6 +82,17 @@
 - Created actions and better battle scene in `Game.game2()`.
     - Displays 4 different actions
 
+**10/03/2022**
+- Created outcomes for actions in `Game.game2()`.
+    - Has a total of 4 main options and 16 sub-options.
+
+**12/03/2022**
+- Edited battle scene and outcomes in `Game.game2()`.
+    - Now only has 4 options and outcomes.
+
+**14/03/2022**
+-
+
 **Debugging**
 | Field  | Expected Type | Input          | Expected Output | Recived Output | Errors                        | Date       |
 |--------|---------------|----------------|-----------------|----------------|-------------------------------|------------|
