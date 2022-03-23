@@ -1,33 +1,65 @@
+Create a function called "intro" that returns a multi-type ARRAY
 
-[Game Program File]
-create a function called "intro" that takes no parameters and returns Nothing
-create a string array with a length of 2 containing ("That's a cool name!" and "That's a weird name"), and call it "outcomes"
-create an int array with a length of 2 containing (50 and 100), and call it "waits"
-create an int called "num" and set it to a random int between 0 and 2 (chooses from 0 - 1)
+    Welcome the user
+    Ask for their name and store it as a string and call it "name"
+    Ask for their age and store it as an integer and call it "age"
 
-create a string called "title" and use Util.getMenu() to create a boxed string by creating a 2d string array as the title and using it as the data parameter, then set the max item length to the length of the title string
-printline title (variable)
+    Create a 1D multi-type array with a length of 2 containing (name, age) called "playerData"
 
-call Util.staggeredPrint with "Why hello adventurer!" as param 1
-call Util.stagWait()
-
-call Util.staggeredPrint with "What is your name?" as param 1
-print "> "
-
-create a string called "name" and set it to the user's input
-
-check if the input was left empty
-
-    send an error message and set name to "Bob"
-
-call Util.staggeredPrint with "{name}..." as param 1
-call Util.stagWait()
+    Return {playerData}
 
 
+Create a function called "game1" that returns a boolean, and takes a multi-type array as a parameter
 
-[Main Program File]
-create a bool called "loop" and set it to true
+    Create a 1D string array with a length of 3 containing 3 riddles called "riddles"
+    Create a 1D string array with a length of 3 containing 3 answers called "answers"
+    Create a 1D boolean array with a length of 3 containing (false, false, false) called "passes"
 
-create a while loop with the condition of "loop"
+    Welcome the user
 
-    create a multi-type (dynamic) array with a length of 2 containing ("" and 0), and call it "playerData"
+    Create a for loop that loops over the length of {riddles} as currentRiddle
+
+        Create a boolean list called fails
+
+        Create a for loop that loops over 3 times as i
+
+            Print {riddles} at the index of {i}
+
+            Ask for an answer and store it as an string and call it "answer"
+
+            Check if the user got the riddle right
+
+                Add true to {passes}
+
+                Break from the loop
+
+            Else
+
+                Print "Wrong"
+
+                Check if {i} equals 2
+
+                    Print the right answer
+
+    Check if {passes} contains true
+
+        Check if {passes} contains false
+
+            Tell the user that they failed some of the riddles, but they still pass
+
+            Return true
+
+        Else
+
+            Tell the user that they got all the answers right
+
+            Return true
+
+    Else
+
+        Tell the user they failed
+
+        Return false
+
+    Return false
+    
