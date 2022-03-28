@@ -551,7 +551,7 @@ class Game
                         Util.stagWait();
                         Util.staggeredPrint("Thanks for playing!", ConsoleColor.Green);
                         Thread.Sleep(1500);
-                        return false;
+                        return true;
 
                     } else
                     {
@@ -600,6 +600,30 @@ class Game
         }
 
         return false;
+
+    }
+
+    public static bool game4(dynamic[] playerData) 
+    {
+
+        return false;
+
+    }
+
+    public interface Quiz
+    {
+
+        public void getAnswer(String[] questionData)
+        {
+
+            while (true)
+            {
+
+                //
+
+            }
+
+        } 
 
     }
 
