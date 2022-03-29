@@ -128,3 +128,10 @@
 |        |               |                |                 |                |                               |            |
 |        |               |                |                 |                |                               |            |
 |        |               |                |                 |                |                               |            |
+
+
+
+**Errors For Table**
+- Cannot implicitly convert type 'string[]' to 'string'
+- ; expected
+- Only assignment, call, increment, decrement, await, and new object expressions can be used as a statement (for -> foreach)

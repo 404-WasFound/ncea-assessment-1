@@ -480,9 +480,9 @@ class Game
         // Welcome user to final trial and explain the game
         Util.staggeredPrint($"Well done {playerData[0]}", ConsoleColor.Green);
         Util.stagWait();
-        Util.staggeredPrint("Welcome to the final trial!", ConsoleColor.Green);
+        Util.staggeredPrint("Welcome to the 3rd trial!", ConsoleColor.Green);
         Util.stagWait();
-        Util.staggeredPrint("To exit the dungeon, you must pick the right door",
+        Util.staggeredPrint("To pass me, you must pick the right door",
                             ConsoleColor.Green);
         Util.stagWait();
         Util.staggeredPrint("You will have 3 guesses to guess between 5 doors",
@@ -546,12 +546,10 @@ class Game
                         Console.Clear();
                         Util.staggeredPrint("Well done!", ConsoleColor.Green);
                         Util.stagWait();
-                        Util.staggeredPrint("You completed the final trial and made it through the dungeon!",
+                        Util.staggeredPrint("You completed the 3rd trial and!",
                            ConsoleColor.Green);
-                        Util.stagWait();
-                        Util.staggeredPrint("Thanks for playing!", ConsoleColor.Green);
                         Thread.Sleep(1500);
-                        return true;
+                        return false;
 
                     } else
                     {
@@ -603,27 +601,73 @@ class Game
 
     }
 
-    public static bool game4(dynamic[] playerData) 
+    public static async bool game4(dynamic[] playerData)
     {
 
-        return false;
+        // Use DateTime class to get the current date
+        DateTime today = DateTime.Today;
 
-    }
+        string title = Util.getMenu(new string[][] {new string[] {"Quiz"}}, 4);
 
-    public interface Quiz
-    {
+        string todayStr = $"{today.ToString("d")}";
 
-        public void getAnswer(String[] questionData)
+        string[] questions = new string[5] {
+
+            "What is the capital city of Japan?",
+            "What year did humans land on the moon?",
+            @"When was the game 'Among Us' released?",
+            "How many bones does a human have?",
+            "What is the date today?"
+
+        };
+
+        string[] answers = new string[5] {
+
+            "Tokyo",
+            "1969",
+            "2018",
+            "206",
+            todayStr
+
+        };
+
+        string[][] altAnswers = new string[5][] {
+
+            new string[] {"Vietnam", "Hong Kong", "Kyoto", "China"},
+            new string[] {"1968", "1869", "2012", "1967"},
+            new string[] {"2019", "2015", "2020", "2021"},
+            new string[] {"207", "205", "306", "208"},
+            new string[] {"19/04/2022", "20/02/2022", "02/07/1886", "24/12/1994"}
+
+        };
+
+        for (int questionCount = 0 ; questionCount<5 ; questionCount++)
         {
 
-            while (true)
+            string questionStr = questions[questionCount];
+            string answerStr = answers[questionCount];
+
+            #region DisplayQuestion
+
+            for (int i = 0 ; i<5 ; i++)
             {
 
                 //
 
             }
 
-        } 
+            #endregion
+
+            Util.staggeredPrint(questionStr, ConsoleColor.DarkYellow, 50);
+            Console.Write("> ");
+
+            string answer = Console.ReadLine();
+
+            
+
+        }
+
+        return true;
 
     }
 

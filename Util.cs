@@ -60,7 +60,7 @@ class Util
         Console.ForegroundColor = ConsoleColor.White;
 
     }
-    
+
     public static string getMenu(dynamic[][] data, int maxItemStringLength)
     {
 
@@ -79,7 +79,7 @@ class Util
         foreach (var items in data)
         {
 
-            // Reset line 
+            // Reset line
             string finalLine = "║ ";
 
             foreach (var item in items)
@@ -100,7 +100,7 @@ class Util
                     goto AddItem;
 
                 }
-                
+
                 if (itemStr.Length < maxItemLength)
                 {
 
@@ -112,10 +112,10 @@ class Util
                     goto AddItem;
 
                 }
-                
+
                 if (itemStr.Length == maxItemLength)
                 {
-                    
+
                     // Skip rest of code before 'AddItem:'
                     goto AddItem;
 
