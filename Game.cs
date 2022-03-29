@@ -551,7 +551,7 @@ class Game
                         Util.stagWait();
                         Util.staggeredPrint("Thanks for playing!", ConsoleColor.Green);
                         Thread.Sleep(1500);
-                        return false;
+                        return true;
 
                     } else
                     {
@@ -600,6 +600,38 @@ class Game
         }
 
         return false;
+
+    }
+
+    public static bool game4(dynamic[] playerData)
+    {
+
+        // Use DateTime class to get the current date
+        DateTime today = new DateTime.Today;
+
+        string today = $"{today}";
+
+        string[] questions = new string[5] {
+
+            "What is the capital city of Japan?",
+            "What year did humans land on the moon?",
+            @"When was the game 'Among Us' released?",
+            "How many bones does a human have?",
+            "What is the date today?"
+
+        };
+
+        string[] answers = new string[5] {
+
+            "",
+            "",
+            "",
+            "",
+            ""
+
+        };
+
+        return true;
 
     }
 

@@ -134,9 +134,16 @@ FUNCTION: "game1", PARAMS: 1D MULTI-TYPE ARRAY, RETURN TYPE: BOOL
 
 FUNCTION: "game2", PARAMS: 1D MULTI-TYPE ARRAY, RETURN TYPE: BOOL
 
-    ...
+    2D STRING ARRAY: "actionsMenuStr", LENGTH: 2, CONTENTS: (
 
+        1D STRING ARRAY: CONTENTS: ("01", "Attack", "02", "Reason")
+        1D STRING ARRAY: CONTENTS: ("03", "Flee", "04", "Do Nothing") 
 
+    )
+
+    1D STRING ARRAY: "menuActionsStr", CONTENTS: ("Attack", "Reason", "Flee", "Do Nothing")
+
+    
 
 [Main Program File]
 BOOL: "loop", CONTENTS: true

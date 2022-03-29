@@ -43,6 +43,10 @@ public class Program
             Game.changeGame();
             loop = Game.game3(playerData);
 
+            // Call 'game4()' to start game3, but wait time in between
+            Game.changeGame();
+            loop = Game.game4(playerData);
+
         }
 
         // Call 'outro()' to ask the user if they want to play again
