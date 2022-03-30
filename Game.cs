@@ -601,16 +601,22 @@ class Game
 
     }
 
-    public static async bool game4(dynamic[] playerData)
+    public static bool game4(dynamic[] playerData)
     {
 
         // Use DateTime class to get the current date
         DateTime today = DateTime.Today;
 
+        // User Random class to get a random number
+        Random random = new Random();
+
+        // Create a title using Util.getMenu()
         string title = Util.getMenu(new string[][] {new string[] {"Quiz"}}, 4);
 
-        string todayStr = $"{today.ToString("d")}";
+        // Turn the day into 
+        string todayStr = $"{today.ToString("dd/MM")}";
 
+        // Array of questions
         string[] questions = new string[5] {
 
             "What is the capital city of Japan?",
@@ -621,6 +627,7 @@ class Game
 
         };
 
+        // Correct answers
         string[] answers = new string[5] {
 
             "Tokyo",
@@ -631,6 +638,7 @@ class Game
 
         };
 
+        // Wrong answers
         string[][] altAnswers = new string[5][] {
 
             new string[] {"Vietnam", "Hong Kong", "Kyoto", "China"},
@@ -641,27 +649,50 @@ class Game
 
         };
 
+        // Loop throught the questions
         for (int questionCount = 0 ; questionCount<5 ; questionCount++)
         {
 
+            // Create a list to add random numbers to in order to make the answer list change each time
+            List<int> answerIndexes = new List<int> {};
+
+            // Set the answer and questons to the index of 'questionCount'
             string questionStr = questions[questionCount];
             string answerStr = answers[questionCount];
 
-            #region DisplayQuestion
+            #region DisplayQuestions
 
-            for (int i = 0 ; i<5 ; i++)
+            while (answerIndexes.Count != 5)
             {
 
-                //
+                // Create and add a random number to the list of answer indexes
+            
+                // Get a random number between 0 and 4
+                int ranIndex = random.Next(0, 5);
+
+                if (!answerIndexes.Contains(ranIndex))
+                {
+
+                    answerIndexes.Add(ranIndex);
+
+                }
 
             }
 
             #endregion
 
             Util.staggeredPrint(questionStr, ConsoleColor.DarkYellow, 50);
+
+            for (int ansCount = 0 ; ansCount > answerIndexes.Count ; ansCount++)
+            {
+
+                //
+
+            }
+
             Console.Write("> ");
 
-            string answer = Console.ReadLine();
+            string userAnswer = Console.ReadLine();
 
             
 
