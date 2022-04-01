@@ -58,7 +58,7 @@ class Game
 
         try {
 
-            int age = int.Parse(ageStr);
+            long age = int.Parse(ageStr);
 
             return new dynamic[] {name, age};
 
@@ -67,7 +67,7 @@ class Game
 
             Util.staggeredPrint("Whatever, you're probably 12 then",
                                 ConsoleColor.Yellow, waits[1]);
-            int age = 12;
+            long age = 12;
 
             return new dynamic[] {name, age};
 
@@ -480,9 +480,9 @@ class Game
         // Welcome user to final trial and explain the game
         Util.staggeredPrint($"Well done {playerData[0]}", ConsoleColor.Green);
         Util.stagWait();
-        Util.staggeredPrint("Welcome to the final trial!", ConsoleColor.Green);
+        Util.staggeredPrint("Welcome to the 3rd trial!", ConsoleColor.Green);
         Util.stagWait();
-        Util.staggeredPrint("To exit the dungeon, you must pick the right door",
+        Util.staggeredPrint("To pass me, you must pick the right door",
                             ConsoleColor.Green);
         Util.stagWait();
         Util.staggeredPrint("You will have 3 guesses to guess between 5 doors",
@@ -546,12 +546,10 @@ class Game
                         Console.Clear();
                         Util.staggeredPrint("Well done!", ConsoleColor.Green);
                         Util.stagWait();
-                        Util.staggeredPrint("You completed the final trial and made it through the dungeon!",
+                        Util.staggeredPrint("You completed the 3rd trial and!",
                            ConsoleColor.Green);
-                        Util.stagWait();
-                        Util.staggeredPrint("Thanks for playing!", ConsoleColor.Green);
                         Thread.Sleep(1500);
-                        return true;
+                        return false;
 
                     } else
                     {
@@ -607,10 +605,18 @@ class Game
     {
 
         // Use DateTime class to get the current date
-        DateTime today = new DateTime.Today;
+        DateTime today = DateTime.Today;
 
-        string today = $"{today}";
+        // User Random class to get a random number
+        Random random = new Random();
 
+        // Create a title using Util.getMenu()
+        string title = Util.getMenu(new string[][] {new string[] {"Quiz"}}, 4);
+
+        // Turn the day into 
+        string todayStr = $"{today.ToString("dd/MM")}";
+
+        // Array of questions
         string[] questions = new string[5] {
 
             "What is the capital city of Japan?",
@@ -621,15 +627,98 @@ class Game
 
         };
 
+        // Correct answers
         string[] answers = new string[5] {
 
-            "",
-            "",
-            "",
-            "",
-            ""
+            "Tokyo",
+            "1969",
+            "2018",
+            "206",
+            todayStr
 
         };
+
+        string finalStr = "";
+        string[][] finalStrList = new string[][] {};
+
+        // Wrong answers
+        string[][] altAnswers = new string[5][] {
+
+            new string[] {answers[0], "Vietnam", "Hong Kong", "Kyoto", "China"},
+            new string[] {answers[1], "1968", "1869", "2012", "1967"},
+            new string[] {answers[2], "2019", "2015", "2020", "2021"},
+            new string[] {answers[3], "207", "205", "306", "208"},
+            new string[] {answers[4], "19/04/2022", "20/02/2022", "02/07/1886", "24/12/1994"}
+
+        };
+
+        //TODO: Create an answer index rendomizer
+
+        List<int[]> allRanIndexes = new List<int[]> {};
+
+        for (int i = 0 ; i<5 ; i++)
+        {
+
+            for (int x = 0 ; x<5 ; x++)
+            {
+
+                // List of random answer indexes
+                List<int> ranIndexes = new List<int> {};
+
+                // Get a random number between 0 and 4
+                int ranIndex = random.Next(0, 5);
+
+                // Add the index to the list only if it has not been added before
+                if (!ranIndexes.Contains(ranIndex))
+                {
+
+                    ranIndexes.Add(ranIndex);
+
+                }
+
+                // Convert the list to and int array and add it to the total list of index arrays
+                allRanIndexes.Add(ranIndexes.ToArray());
+
+            }
+
+        }
+
+        for (int i = 0 ; i<5 ; i++)
+        {
+
+            for (int questionCount = 0 ; questionCount<5 ; questionCount++)
+            {
+
+                // Add 1 because index count (questionCount) starts at 0
+                finalStrList[i][questionCount] = $"{questionCount + 1}. {altAnswers[0][allRanIndexes[questionCount][0]]}"
+
+            }
+
+            string preFinalStr = "";
+
+            foreach (string line in finalStrList[i])
+            {
+
+                preFinalStr += line + "\n";
+
+            }
+
+            finalStrList.Add(preFinalStr);
+
+        }
+
+
+        for (int i = 0 ; i<finalStrList.Length ; i++)
+        {
+
+            foreach (string line in finalStrList[i])
+            {
+
+                Console
+
+            }
+
+        }
 
         return true;
 
