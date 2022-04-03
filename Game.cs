@@ -601,7 +601,7 @@ class Game
 
     }
 
-    public static bool game4(dynamic[] playerData)
+    public static bool game4()
     {
 
         // Use DateTime class to get the current date
@@ -638,9 +638,6 @@ class Game
 
         };
 
-        string finalStr = "";
-        string[][] finalStrList = new string[][] {};
-
         // Wrong answers
         string[][] altAnswers = new string[5][] {
 
@@ -652,75 +649,135 @@ class Game
 
         };
 
-        //TODO: Create an answer index rendomizer
-
         List<int[]> allRanIndexes = new List<int[]> {};
+        string[][] finalStrList = new string[][] {};
+        int userAnswer = 0;
+        int answerIndex = 0;
+        int wrong = 0;
 
+        // Create 5 arrays of 5 random indexes from 0 - 4
         for (int i = 0 ; i<5 ; i++)
         {
+
+            List<int> randomIndexes = new List<int> {};
 
             for (int x = 0 ; x<5 ; x++)
             {
 
-                // List of random answer indexes
-                List<int> ranIndexes = new List<int> {};
-
-                // Get a random number between 0 and 4
-                int ranIndex = random.Next(0, 5);
-
-                // Add the index to the list only if it has not been added before
-                if (!ranIndexes.Contains(ranIndex))
+                while (true)
                 {
 
-                    ranIndexes.Add(ranIndex);
+                    // Get a random number between 0 and 4
+                    int randomIndex = random.Next(0, 5);
+
+                    if (!randomIndexes.Contains(randomIndex))
+                    {
+
+                        randomIndexes.Add(randomIndex);
+                        break;
+
+                    }
 
                 }
 
-                // Convert the list to and int array and add it to the total list of index arrays
-                allRanIndexes.Add(ranIndexes.ToArray());
-
             }
+
+            allRanIndexes.Add(randomIndexes.ToArray());
 
         }
 
-        for (int i = 0 ; i<5 ; i++)
+        // Display and ask questions
+        for (int questionCount = 0 ; questionCount<5 ; questionCount++)
         {
 
-            for (int questionCount = 0 ; questionCount<5 ; questionCount++)
+            // Array of questions with random placements
+            string[] questionsStrArray = new string[5] {
+
+                $"1 - {altAnswers[questionCount][allRanIndexes[questionCount][0]]}",
+                $"2 - {altAnswers[questionCount][allRanIndexes[questionCount][1]]}",
+                $"3 - {altAnswers[questionCount][allRanIndexes[questionCount][2]]}",
+                $"4 - {altAnswers[questionCount][allRanIndexes[questionCount][3]]}",
+                $"5 - {altAnswers[questionCount][allRanIndexes[questionCount][4]]}"
+
+            };
+
+            // Display question
+            Util.staggeredPrint(questions[questionCount], ConsoleColor.DarkCyan, 10);
+            Util.stagWait();
+
+            foreach (string line in questionsStrArray)
             {
 
-                // Add 1 because index count (questionCount) starts at 0
-                finalStrList[i][questionCount] = $"{questionCount + 1}. {altAnswers[0][allRanIndexes[questionCount][0]]}"
+                Console.WriteLine(line);
+
+                // Split the line to get the answer
+                string splitLineAns = line.Split(" - ")[1];
+
+                // Check if it is the right answer
+                if (answers[questionCount] == splitLineAns)
+                {
+
+                    // Get index of answer
+                    answerIndex = Array.FindIndex(questionsStrArray, ind => ind.Contains(answers[questionCount]));
+
+                }
 
             }
 
-            string preFinalStr = "";
-
-            foreach (string line in finalStrList[i])
+            while (true)
             {
 
-                preFinalStr += line + "\n";
+                Console.Write("> ");
+                string userAnswerStr = Console.ReadLine();
+
+                try
+                {
+
+                    userAnswer = int.Parse(userAnswerStr);
+
+                    if (!Util.inRange(userAnswer, 1, 5))
+                    {
+
+                        // Purposely create a FormatException so it is caught and prints the error
+                        int ph = int.Parse("x");
+
+                    } else { break; }
+
+                } catch (FormatException)
+                {
+
+                    Util.staggeredPrint("Please enter a number between 1 and 5");
+                    continue;
+
+                }
 
             }
 
-            finalStrList.Add(preFinalStr);
+            if (userAnswer - 1 == answerIndex)
+            {
+
+                Console.WriteLine($"!!{userAnswer}!! RIGHT ({answerIndex})");
+
+            } else
+            {
+
+                Console.WriteLine($"!!{userAnswer}!! WRONG ({answerIndex})");
+                wrong++;
+
+            }
+
+            Thread.Sleep(500);
+            Console.Clear();
 
         }
-        //
 
-        for (int i = 0 ; i<finalStrList.Length ; i++)
+        // Check if the player got atleast 3 or more wrong
+        if (wrong >= 3)
         {
 
-            foreach (string line in finalStrList[i])
-            {
-
-                Console
-
-            }
+            Util.staggeredPrint("Sorry, but you failed too many questions");
 
         }
-
-        return true;
 
     }
 
