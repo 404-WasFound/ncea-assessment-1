@@ -31,17 +31,17 @@ public class Program
             //Call 'intro()' to start game
             playerData = Game.intro();
 
-            // // Call 'game1()' to start game1, but wait time in between
-            // Game.changeGame();
-            // loop = Game.game1(playerData);
+            // Call 'game1()' to start game1, but wait time in between
+            Game.changeGame();
+            loop = Game.game1(playerData);
 
-            // // Call 'game2()' to start game2, but wait time in between
-            // Game.changeGame();
-            // loop = Game.game2(playerData);
+            // Call 'game2()' to start game2, but wait time in between
+            Game.changeGame();
+            loop = Game.game2(playerData);
 
-            // // Call 'game3()' to start game3, but wait time in between
-            // Game.changeGame();
-            // loop = Game.game3(playerData);
+            // Call 'game3()' to start game3, but wait time in between
+            Game.changeGame();
+            loop = Game.game3(playerData);
 
             // Call 'game4()' to start game3, but wait time in between
             Game.changeGame();

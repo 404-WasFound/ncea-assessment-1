@@ -11,6 +11,22 @@ class Game
         string[] outcomes = new string[2] {"That's a cool name!", "That's a weird name"};
         ConsoleColor[] colours = new ConsoleColor[2] {ConsoleColor.Green, ConsoleColor.Yellow};
         int[] waits = new int[2] {50, 100};
+        string[] preAlphaChars = "qwertyuiopasdfghjklzxcvbnm".Split("");
+        List<char> alphaChars = new List<char> {};
+        string name = "";
+
+        // Create a character list from a string array
+        foreach (string c in preAlphaChars)
+        {
+
+            // Convert string to character
+            alphaChars.Add(char.Parse(c));
+
+        }
+
+        // Convert to array
+        alphaChars.ToArray();
+
         // Get a random number between 0 and 1
         int num = random.Next(0, 2);
 
@@ -25,21 +41,69 @@ class Game
         Util.staggeredPrint("Why hello adventurer!", ConsoleColor.Green);
         Util.stagWait();
 
-        Util.staggeredPrint("What is your name?", ConsoleColor.Green);
-        Console.Write("> ");
-
-        string name = Console.ReadLine();
-
-        // Check if 'name' is empty
-        if (name == "")
+        while (true)
         {
 
-            Util.staggeredPrint("It's not hard to type you know...",
-                                ConsoleColor.Yellow, waits[1]);
-            Util.stagWait();
-            Util.staggeredPrint("You'll just have to be 'Bob' then (=_=)",
-                                ConsoleColor.Yellow, waits[1]);
-            name = "Bob";
+            Util.staggeredPrint("What is your name?", ConsoleColor.Green);
+            Console.Write("> ");
+
+            name = Console.ReadLine();
+
+            // Check if 'name' is empty
+            if (name == "")
+            {
+
+                Util.staggeredPrint("It's not hard to type you know...",
+                                    ConsoleColor.Yellow, waits[1]);
+                Util.stagWait();
+                Util.staggeredPrint("You'll just have to be 'Bob' then (=_=)",
+                                    ConsoleColor.Yellow, waits[1]);
+                name = "Bob";
+
+            }
+
+            // Check if there are no numbers
+            List<bool> tof = new List<bool> {};
+
+            foreach (char c in name)
+            {
+
+                foreach (char aC in alphaChars)
+                {
+
+                    if (c == aC)
+                    {
+
+                        // If c is a letter
+                        tof.Add(true);
+
+                    }
+
+                    else
+                    {
+
+                        // If c isn't a letter
+                        tof.Add(false);
+
+                    }
+
+                }
+
+            }
+
+            if (tof.Contains(false))
+            {
+
+                continue;
+
+            }
+
+            else
+            {
+
+                break;
+
+            }
 
         }
 
@@ -58,7 +122,7 @@ class Game
 
         try {
 
-            int age = int.Parse(ageStr);
+            long age = int.Parse(ageStr);
 
             return new dynamic[] {name, age};
 
@@ -67,7 +131,7 @@ class Game
 
             Util.staggeredPrint("Whatever, you're probably 12 then",
                                 ConsoleColor.Yellow, waits[1]);
-            int age = 12;
+            long age = 12;
 
             return new dynamic[] {name, age};
 
@@ -89,7 +153,7 @@ class Game
         // TODO: Do opposite of user's input for first riddle
 
         string name = playerData[0];
-        int age = playerData[1];
+        long age = playerData[1];
 
         Console.ForegroundColor = ConsoleColor.Red;
         Util.staggeredPrint($"Why hello {name}, ", ConsoleColor.Red);
@@ -649,50 +713,166 @@ class Game
 
         };
 
-        // Loop throught the questions
-        for (int questionCount = 0 ; questionCount<5 ; questionCount++)
+        // Variable setup
+        List<int[]> allRanIndexes = new List<int[]> {};
+        string[][] finalStrList = new string[][] {};
+        int userAnswer = 0;
+        int answerIndex = 0;
+        int wrong = 0;
+
+        // Welcome the user
+        Util.staggeredPrint($"Welcome to the final trial, {playerData[0]}", ConsoleColor.DarkCyan);
+        Util.stagWait();
+        Util.staggeredPrint("To finish the dungoeon...", ConsoleColor.DarkCyan);
+        Util.stagWait();
+        Util.staggeredPrint("You must...", ConsoleColor.DarkCyan);
+        Util.stagWait();
+        Util.staggeredPrint("Do a quiz! 😁", ConsoleColor.DarkCyan);
+        Util.stagWait();
+
+        // Create 5 arrays of 5 random indexes from 0 - 4
+        for (int i = 0 ; i<5 ; i++)
         {
 
-            // Create a list to add random numbers to in order to make the answer list change each time
-            List<int> answerIndexes = new List<int> {};
+            List<int> randomIndexes = new List<int> {};
 
-            // Set the answer and questons to the index of 'questionCount'
-            string questionStr = questions[questionCount];
-            string answerStr = answers[questionCount];
-
-            #region DisplayQuestions
-
-            while (answerIndexes.Count != 5)
+            for (int x = 0 ; x<5 ; x++)
             {
 
-                // Randomize the number corresponding to the answer
-            
-                // Get a random number between 0 and 4
-                int ranIndex = random.Next(0, 5);
-
-                if (!answerIndexes.Contains(ranIndex))
+                while (true)
                 {
 
-                    answerIndexes.Add(ranIndex);
+                    // Get a random number between 0 and 4
+                    int randomIndex = random.Next(0, 5);
+
+                    if (!randomIndexes.Contains(randomIndex))
+                    {
+
+                        randomIndexes.Add(randomIndex);
+                        break;
+
+                    }
 
                 }
 
             }
 
-            string answerList = $"\nAnswers:\n  1. {altAnswers[questionCount][answerIndexes[0]]}\n  2. {altAnswers[questionCount][answerIndexes[1]]}\n  3. {altAnswers[questionCount][answerIndexes[2]]}\n  4. {altAnswers[questionCount][answerIndexes[3]]}\n  5. {altAnswers[questionCount][answerIndexes[4]]}\n";
-
-            Util.staggeredPrint(questionStr, ConsoleColor.DarkCyan, 10);
-            Console.Write(answerList);
-
-            #endregion
-
-            Console.Write("> ");
-
-            string userAnswer = Console.ReadLine();
+            allRanIndexes.Add(randomIndexes.ToArray());
 
         }
 
-        return true;
+        // Display and ask questions
+        for (int questionCount = 0 ; questionCount<5 ; questionCount++)
+        {
+
+            // Array of questions with random placements
+            string[] questionsStrArray = new string[5] {
+
+                $"1 - {altAnswers[questionCount][allRanIndexes[questionCount][0]]}",
+                $"2 - {altAnswers[questionCount][allRanIndexes[questionCount][1]]}",
+                $"3 - {altAnswers[questionCount][allRanIndexes[questionCount][2]]}",
+                $"4 - {altAnswers[questionCount][allRanIndexes[questionCount][3]]}",
+                $"5 - {altAnswers[questionCount][allRanIndexes[questionCount][4]]}"
+
+            };
+
+            // Display question
+            Util.staggeredPrint(questions[questionCount], ConsoleColor.DarkCyan, 10);
+            Util.stagWait();
+
+            foreach (string line in questionsStrArray)
+            {
+
+                Console.WriteLine(line);
+
+                // Split the line to get the answer
+                string splitLineAns = line.Split(" - ")[1];
+
+                // Check if it is the right answer
+                if (answers[questionCount] == splitLineAns)
+                {
+
+                    // Get index of answer
+                    answerIndex = Array.FindIndex(questionsStrArray, ind => ind.Contains(answers[questionCount]));
+
+                }
+
+            }
+
+            while (true)
+            {
+
+                Console.Write("> ");
+                string userAnswerStr = Console.ReadLine();
+
+                try
+                {
+
+                    userAnswer = int.Parse(userAnswerStr);
+
+                    if (!Util.inRange(userAnswer, 1, 5))
+                    {
+
+                        // Purposely create a FormatException so it is caught and prints the error
+                        int ph = int.Parse("x");
+
+                    } else { break; }
+
+                } catch (FormatException)
+                {
+
+                    Util.staggeredPrint("Please enter a number between 1 and 5");
+                    continue;
+
+                }
+
+            }
+
+            if (userAnswer - 1 == answerIndex)
+            {
+
+                Util.staggeredPrint("Correct", ConsoleColor.DarkCyan);
+
+            } else
+            {
+
+                Util.staggeredPrint("Nope, wrong", ConsoleColor.DarkCyan);
+                wrong++;
+
+            }
+
+            Thread.Sleep(500);
+            Console.Clear();
+
+        }
+
+        // Check if the player got atleast 3 or more wrong
+        if (wrong >= 3)
+        {
+
+            Util.staggeredPrint("Sorry, but you failed too many questions", ConsoleColor.DarkCyan);
+            Util.stagWait();
+            Util.staggeredPrint("Thanks for playing", ConsoleColor.DarkCyan);
+            Util.stagWait();
+
+            return true;
+
+        }
+
+        // When the user finishes the dungeon
+        else
+        {
+
+            Util.staggeredPrint("Well done!", ConsoleColor.DarkCyan);
+            Util.stagWait();
+            Util.staggeredPrint("You finished the dungeon", ConsoleColor.DarkCyan);
+            Util.stagWait();
+            Util.staggeredPrint("Thanks for playing!", ConsoleColor.DarkCyan);
+            Util.stagWait();
+
+            return true;
+
+        }
 
     }
 
