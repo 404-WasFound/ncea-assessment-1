@@ -22,7 +22,7 @@ public class Program
             Console.BackgroundColor = ConsoleColor.Black;
 
             // Call '.Clear()' to set terminal to all DarkBlue
-            Console.Clear();
+            //Console.Clear();
             Console.ForegroundColor = ConsoleColor.White;
 
             // Setup dynamic array that can only take 2 items
@@ -45,7 +45,7 @@ public class Program
 
             // Call 'game4()' to start game3, but wait time in between
             Game.changeGame();
-            loop = Game.game4(playerData);
+            loop = Game.game4();
 
         }
 

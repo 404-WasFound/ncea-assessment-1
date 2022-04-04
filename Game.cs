@@ -665,7 +665,7 @@ class Game
 
     }
 
-    public static bool game4(dynamic[] playerData)
+    public static bool game4()
     {
 
         // Use DateTime class to get the current date
@@ -713,13 +713,17 @@ class Game
 
         };
 
+<<<<<<< HEAD
         // Variable setup
+=======
+>>>>>>> 140856a928c642d37e21292e02742a7fd98d11ff
         List<int[]> allRanIndexes = new List<int[]> {};
         string[][] finalStrList = new string[][] {};
         int userAnswer = 0;
         int answerIndex = 0;
         int wrong = 0;
 
+<<<<<<< HEAD
         // Welcome the user
         Util.staggeredPrint($"Welcome to the final trial, {playerData[0]}", ConsoleColor.DarkCyan);
         Util.stagWait();
@@ -730,6 +734,8 @@ class Game
         Util.staggeredPrint("Do a quiz! 😁", ConsoleColor.DarkCyan);
         Util.stagWait();
 
+=======
+>>>>>>> 140856a928c642d37e21292e02742a7fd98d11ff
         // Create 5 arrays of 5 random indexes from 0 - 4
         for (int i = 0 ; i<5 ; i++)
         {
@@ -831,12 +837,20 @@ class Game
             if (userAnswer - 1 == answerIndex)
             {
 
+<<<<<<< HEAD
                 Util.staggeredPrint("Correct", ConsoleColor.DarkCyan);
+=======
+                Console.WriteLine($"!!{userAnswer}!! RIGHT ({answerIndex})");
+>>>>>>> 140856a928c642d37e21292e02742a7fd98d11ff
 
             } else
             {
 
+<<<<<<< HEAD
                 Util.staggeredPrint("Nope, wrong", ConsoleColor.DarkCyan);
+=======
+                Console.WriteLine($"!!{userAnswer}!! WRONG ({answerIndex})");
+>>>>>>> 140856a928c642d37e21292e02742a7fd98d11ff
                 wrong++;
 
             }
@@ -850,6 +864,7 @@ class Game
         if (wrong >= 3)
         {
 
+<<<<<<< HEAD
             Util.staggeredPrint("Sorry, but you failed too many questions", ConsoleColor.DarkCyan);
             Util.stagWait();
             Util.staggeredPrint("Thanks for playing", ConsoleColor.DarkCyan);
@@ -871,6 +886,9 @@ class Game
             Util.stagWait();
 
             return true;
+=======
+            Util.staggeredPrint("Sorry, but you failed too many questions");
+>>>>>>> 140856a928c642d37e21292e02742a7fd98d11ff
 
         }
 
