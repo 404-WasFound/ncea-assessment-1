@@ -1,7 +1,7 @@
 class Game
 {
 
-    public static dynamic[] intro()
+    public static dynamic[] Intro()
     {
 
         // Initialize classes
@@ -11,111 +11,72 @@ class Game
         string[] outcomes = new string[2] {"That's a cool name!", "That's a weird name"};
         ConsoleColor[] colours = new ConsoleColor[2] {ConsoleColor.Green, ConsoleColor.Yellow};
         int[] waits = new int[2] {50, 100};
-        string[] preAlphaChars = "qwertyuiopasdfghjklzxcvbnm".Split("");
-        List<char> alphaChars = new List<char> {};
         string name = "";
-
-        // Create a character list from a string array
-        foreach (string c in preAlphaChars)
-        {
-
-            // Convert string to character
-            alphaChars.Add(char.Parse(c));
-
-        }
-
-        // Convert to array
-        alphaChars.ToArray();
 
         // Get a random number between 0 and 1
         int num = random.Next(0, 2);
 
-        // Use Util.getMenu() to create a title
-        string title = Util.getMenu(new string[][]
+        // Use Util.GetMenu() to create a title
+        string title = Util.GetMenu(new string[][]
             {new string[] {"Adventure Game"}}, "Adventure Game".Length);
 
         // Welcome user and get their name
         Console.ForegroundColor = ConsoleColor.Magenta;
         Console.WriteLine(title);
         Console.ForegroundColor = ConsoleColor.White;
-        Util.staggeredPrint("Why hello adventurer!", ConsoleColor.Green);
-        Util.stagWait();
+        Util.StaggeredPrint("Why hello adventurer!", ConsoleColor.Green);
+        Util.StagWait();
 
-        while (true)
+        Util.StaggeredPrint("What is your name?", ConsoleColor.Green);
+        Console.Write("> ");
+
+        name = Console.ReadLine();
+
+        // List of bools to detect if there are numbers name
+        List<bool> containsNums = new List<bool> {};
+
+        // Check if there are any numbers in name
+        foreach (char c in name)
         {
 
-            Util.staggeredPrint("What is your name?", ConsoleColor.Green);
-            Console.Write("> ");
-
-            name = Console.ReadLine();
-
-            // Check if 'name' is empty
-            if (name == "")
+            try
             {
 
-                Util.staggeredPrint("It's not hard to type you know...",
-                                    ConsoleColor.Yellow, waits[1]);
-                Util.stagWait();
-                Util.staggeredPrint("You'll just have to be 'Bob' then (=_=)",
-                                    ConsoleColor.Yellow, waits[1]);
-                name = "Bob";
+                int.Parse(c.ToString());
+                containsNums.Add(true);
 
-            }
-
-            // Check if there are no numbers
-            List<bool> tof = new List<bool> {};
-
-            foreach (char c in name)
+            } catch (FormatException)
             {
 
-                foreach (char aC in alphaChars)
-                {
-
-                    if (c == aC)
-                    {
-
-                        // If c is a letter
-                        tof.Add(true);
-
-                    }
-
-                    else
-                    {
-
-                        // If c isn't a letter
-                        tof.Add(false);
-
-                    }
-
-                }
-
-            }
-
-            if (tof.Contains(false))
-            {
-
-                continue;
-
-            }
-
-            else
-            {
-
-                break;
+                containsNums.Add(false);
 
             }
 
         }
 
+        // Check if 'name' is empty or that there are numbers in the name
+        if (name == "" || containsNums.Contains(true))
+        {
+
+            Util.StaggeredPrint("It's not hard to type a proper name you know...",
+                                ConsoleColor.Yellow, waits[1]);
+            Util.StagWait();
+            Util.StaggeredPrint("You'll just have to be 'Bob' then (=_=)",
+                                ConsoleColor.Yellow, waits[1]);
+            name = "Bob";
+
+        }
+
+
         // Clear screen and get user's age
         Console.Clear();
-        Util.staggeredPrint($"{name}...");
-        Util.stagWait();
+        Util.StaggeredPrint($"{name}...");
+        Util.StagWait();
 
-        Util.staggeredPrint(outcomes[num], colours[num], waits[num]);
-        Util.stagWait();
+        Util.StaggeredPrint(outcomes[num], colours[num], waits[num]);
+        Util.StagWait();
 
-        Util.staggeredPrint("What is your age?");
+        Util.StaggeredPrint("What is your age?");
         Console.Write("> ");
 
         string ageStr = Console.ReadLine();
@@ -129,7 +90,7 @@ class Game
         // Check if nothing a number isn't entered
         } catch (FormatException) {
 
-            Util.staggeredPrint("Whatever, you're probably 12 then",
+            Util.StaggeredPrint("Whatever, you're probably 12 then",
                                 ConsoleColor.Yellow, waits[1]);
             long age = 12;
 
@@ -139,7 +100,7 @@ class Game
 
     }
 
-    public static bool game1(dynamic[] playerData)
+    public static bool Game1(dynamic[] playerData)
     {
 
         // Riddles and answers
@@ -156,14 +117,14 @@ class Game
         long age = playerData[1];
 
         Console.ForegroundColor = ConsoleColor.Red;
-        Util.staggeredPrint($"Why hello {name}, ", ConsoleColor.Red);
-        Util.stagWait();
-        Util.staggeredPrint($"You're {age} right?", ConsoleColor.Red);
-        Util.stagWait();
-        Util.staggeredPrint("Yeah that's right...", ConsoleColor.Red);
+        Util.StaggeredPrint($"Why hello {name}, ", ConsoleColor.Red);
+        Util.StagWait();
+        Util.StaggeredPrint($"You're {age} right?", ConsoleColor.Red);
+        Util.StagWait();
+        Util.StaggeredPrint("Yeah that's right...", ConsoleColor.Red);
 
         Thread.Sleep(1000);
-        Util.staggeredPrint("To pass me, you must riddle me this...",
+        Util.StaggeredPrint("To pass me, you must riddle me this...",
                             ConsoleColor.Red);
         Thread.Sleep(1000);
 
@@ -181,7 +142,7 @@ class Game
             {
 
                 // Get user answer
-                Util.staggeredPrint(riddles[currentRiddle],
+                Util.StaggeredPrint(riddles[currentRiddle],
                                     ConsoleColor.Cyan, 10);
                 Console.Write("> ");
                 string answer = Console.ReadLine();
@@ -190,7 +151,7 @@ class Game
                 if (answer.Contains(answers[currentRiddle]))
                 {
 
-                    Util.staggeredPrint("Wow you got it right",
+                    Util.StaggeredPrint("Wow you got it right",
                                         ConsoleColor.Red);
                     passes[currentRiddle] = true;
                     Thread.Sleep(500);
@@ -202,15 +163,15 @@ class Game
                 else
                 {
 
-                    Util.staggeredPrint("Nope, wrong", ConsoleColor.Yellow);
+                    Util.StaggeredPrint("Nope, wrong", ConsoleColor.Yellow);
 
                     // Check if user has failed 3 times
                     // i increments by 1 starting at 0 so 2 is the index of 3
                     if (i == 2)
                     {
 
-                        Util.stagWait();
-                        Util.staggeredPrint($"The answer was {answers[currentRiddle]}",
+                        Util.StagWait();
+                        Util.StaggeredPrint($"The answer was {answers[currentRiddle]}",
                                             ConsoleColor.Yellow);
 
                     }
@@ -230,10 +191,10 @@ class Game
             if (passes.Contains(false))
             {
 
-                Util.staggeredPrint("Hmm, you failed some of the riddles",
+                Util.StaggeredPrint("Hmm, you failed some of the riddles",
                                     ConsoleColor.Red);
-                Util.stagWait();
-                Util.staggeredPrint("But you got some right so I'll let you pass",
+                Util.StagWait();
+                Util.StaggeredPrint("But you got some right so I'll let you pass",
                                     ConsoleColor.Red);
                 return true;
 
@@ -242,10 +203,10 @@ class Game
             else
             {
 
-                Util.staggeredPrint("Wow you got them all right, good job!",
+                Util.StaggeredPrint("Wow you got them all right, good job!",
                                     ConsoleColor.Red);
-                Util.stagWait();
-                Util.staggeredPrint("I'll let you pass then", ConsoleColor.Red);
+                Util.StagWait();
+                Util.StaggeredPrint("I'll let you pass then", ConsoleColor.Red);
                 return true;
 
             }
@@ -255,11 +216,11 @@ class Game
         if (!passes.Contains(true))
         {
 
-            Util.staggeredPrint("Well...", ConsoleColor.Blue);
-            Util.stagWait();
-            Util.staggeredPrint("You failed them all...", ConsoleColor.Blue);
+            Util.StaggeredPrint("Well...", ConsoleColor.Blue);
+            Util.StagWait();
+            Util.StaggeredPrint("You failed them all...", ConsoleColor.Blue);
             Thread.Sleep(500);
-            Util.staggeredPrint("Thanks for playing :)", ConsoleColor.Yellow);
+            Util.StaggeredPrint("Thanks for playing :)", ConsoleColor.Yellow);
             Thread.Sleep(500);
             return false;
 
@@ -271,7 +232,7 @@ class Game
 
     }
 
-    public static bool game2(dynamic[] playerData)
+    public static bool Game2(dynamic[] playerData)
     {
 
         // Actions menu and indexes
@@ -285,8 +246,8 @@ class Game
         // Create seperate array for actions to be accessed by index input
         string[] menuActionsStr = {"Attack", "Reason", "Flee", "Do Nothing"};
 
-        // Use Util.getMenu() to create a menu
-        string actionsMenu = Util.getMenu(actionsMenuStr, 10);
+        // Use Util.GetMenu() to create a menu
+        string actionsMenu = Util.GetMenu(actionsMenuStr, 10);
 
         // Player settings
         int playerHealth = 20;
@@ -373,8 +334,8 @@ class Game
 
             };
 
-            string dragonMenu = Util.getMenu(dragonData, 10);
-            string playerMenu = Util.getMenu(playerData, 10);
+            string dragonMenu = Util.GetMenu(dragonData, 10);
+            string playerMenu = Util.GetMenu(playerData, 10);
 
             #endregion
 
@@ -416,23 +377,23 @@ class Game
 
             Console.Clear();
             // Print action outcomes at the index of the user input
-            Util.staggeredPrint(actionOutcomesString[index][0]);
+            Util.StaggeredPrint(actionOutcomesString[index][0]);
 
         };
 
-        // 'Use Util.getMenu()' to create a boxed title
+        // 'Use Util.GetMenu()' to create a boxed title
         string[][] title = {new string[] {"Dragon Battle"}};
-        string boxedTitle = Util.getMenu(title, "Dragon Battle".Length);
+        string boxedTitle = Util.GetMenu(title, "Dragon Battle".Length);
         Console.WriteLine(boxedTitle, ConsoleColor.Magenta);
 
         // Welcome player
-        Util.staggeredPrint($"Well hello there {playerData[0]},",
+        Util.StaggeredPrint($"Well hello there {playerData[0]},",
                             ConsoleColor.DarkYellow);
-        Util.stagWait();
-        Util.staggeredPrint("Welcome to the second trial",
+        Util.StagWait();
+        Util.StaggeredPrint("Welcome to the 2nd trial",
                             ConsoleColor.DarkYellow);
-        Util.stagWait();
-        Util.staggeredPrint("To reach the next level, you must defeat me!",
+        Util.StagWait();
+        Util.StaggeredPrint("To reach the next level, you must defeat me!",
                             ConsoleColor.DarkYellow, 100);
 
         Console.Clear();
@@ -452,10 +413,10 @@ class Game
 
                 actionIndex = int.Parse(Console.ReadLine());
 
-                if (!Util.inRange(actionIndex, 1, 4))
+                if (!Util.InRange(actionIndex, 1, 4))
                 {
 
-                    Util.staggeredPrint("Input error, please select a number between 1 and 4");
+                    Util.StaggeredPrint("Input error, please select a number between 1 and 4");
 
                 } else
                 {
@@ -463,7 +424,7 @@ class Game
                     Console.Clear();
                     // Minus 1 to get index then print outcome of choice
                     printOutcome(actionIndex - 1);
-                    Util.stagWait();
+                    Util.StagWait();
                     break;
 
                 }
@@ -471,7 +432,7 @@ class Game
             } catch (FormatException)
             {
 
-                Util.staggeredPrint("Input error, please select a number between 1 and 4");
+                Util.StaggeredPrint("Input error, please select a number between 1 and 4");
 
             }
 
@@ -482,21 +443,21 @@ class Game
 
             // Congratulate user on passing second trial
             Console.Clear();
-            Util.staggeredPrint("You passed the second trial!",
+            Util.StaggeredPrint("You passed the 2nd trial!",
                                 ConsoleColor.Green);
-            Util.stagWait();
-            Util.staggeredPrint("Now onto the final trial...",
+            Util.StagWait();
+            Util.StaggeredPrint("Now onto the 3rd...",
                                 ConsoleColor.Green);
-            Util.stagWait();
+            Util.StagWait();
             // End game2
             return true;
 
         } else {
 
-            Util.staggeredPrint("Sadly you failed this trial...",
+            Util.StaggeredPrint("Sadly you failed this trial...",
                                 ConsoleColor.Green);
-            Util.stagWait();
-            Util.staggeredPrint("Thanks for playing!", ConsoleColor.Green);
+            Util.StagWait();
+            Util.StaggeredPrint("Thanks for playing!", ConsoleColor.Green);
             Thread.Sleep(1500);
             return false;
 
@@ -504,7 +465,7 @@ class Game
 
     }
 
-    public static bool game3(dynamic[] playerData)
+    public static bool Game3(dynamic[] playerData)
     {
 
         // list of past user choices
@@ -536,23 +497,23 @@ class Game
 
         };
 
-        // Create boxed title with Util.getMenu()
+        // Create boxed title with Util.GetMenu()
         string[][] title = {new string[] {"Door Game"}};
-        string boxedTitle = Util.getMenu(title, "Door Game".Length);
+        string boxedTitle = Util.GetMenu(title, "Door Game".Length);
         Console.WriteLine(boxedTitle, ConsoleColor.Green);
 
         // Welcome user to final trial and explain the game
-        Util.staggeredPrint($"Well done {playerData[0]}", ConsoleColor.Green);
-        Util.stagWait();
-        Util.staggeredPrint("Welcome to the 3rd trial!", ConsoleColor.Green);
-        Util.stagWait();
-        Util.staggeredPrint("To pass me, you must pick the right door",
+        Util.StaggeredPrint($"Well done {playerData[0]}", ConsoleColor.Green);
+        Util.StagWait();
+        Util.StaggeredPrint("Welcome to the 3rd trial!", ConsoleColor.Green);
+        Util.StagWait();
+        Util.StaggeredPrint("To pass me, you must pick the right door",
                             ConsoleColor.Green);
-        Util.stagWait();
-        Util.staggeredPrint("You will have 3 guesses to guess between 5 doors",
+        Util.StagWait();
+        Util.StaggeredPrint("You will have 3 guesses to guess between 5 doors",
                             ConsoleColor.Green);
-        Util.stagWait();
-        Util.staggeredPrint("Good luck!", ConsoleColor.Green, 100);
+        Util.StagWait();
+        Util.StaggeredPrint("Good luck!", ConsoleColor.Green, 100);
         Thread.Sleep(1000);
 
         // Start the game
@@ -589,7 +550,7 @@ class Game
                 } catch (FormatException)
                 {
 
-                    Util.staggeredPrint("Please only enter numbers",
+                    Util.StaggeredPrint("Please only enter numbers",
                                         ConsoleColor.Yellow);
                     acceptedGuess = false;
 
@@ -598,7 +559,7 @@ class Game
             }
 
             // Check if user guess is between 1 and 5
-            if (Util.inRange(guess, 1, 5))
+            if (Util.InRange(guess, 1, 5))
             {
 
                 if (!totalGuesses.Contains(guess))
@@ -608,9 +569,9 @@ class Game
                     {
 
                         Console.Clear();
-                        Util.staggeredPrint("Well done!", ConsoleColor.Green);
-                        Util.stagWait();
-                        Util.staggeredPrint("You completed the 3rd trial and!",
+                        Util.StaggeredPrint("Well done!", ConsoleColor.Green);
+                        Util.StagWait();
+                        Util.StaggeredPrint("You completed the 3rd trial!",
                            ConsoleColor.Green);
                         Thread.Sleep(1500);
                         return false;
@@ -618,13 +579,13 @@ class Game
                     } else
                     {
 
-                        Util.staggeredPrint("Nope, wrong door",
+                        Util.StaggeredPrint("Nope, wrong door",
                                             ConsoleColor.Yellow);
-                        Util.stagWait();
+                        Util.StagWait();
                         guesses--;
-                        Util.staggeredPrint($"You have {guesses} guesses left",
+                        Util.StaggeredPrint($"You have {guesses} guesses left",
                                             ConsoleColor.Yellow);
-                        Util.stagWait();
+                        Util.StagWait();
                         Console.Clear();
                         totalGuesses.Add(guess);
                         acceptedGuess = false;
@@ -634,19 +595,19 @@ class Game
                 } else
                 {
 
-                    Util.staggeredPrint($"You already guessed {guess}",
+                    Util.StaggeredPrint($"You already guessed {guess}",
                                         ConsoleColor.Yellow);
-                    Util.stagWait();
+                    Util.StagWait();
                     acceptedGuess = false;
 
                 }
 
             }
 
-            if (!Util.inRange(guess, 1, 5))
+            if (!Util.InRange(guess, 1, 5))
             {
 
-                Util.staggeredPrint("Please only enter numbers between 1 and 5",
+                Util.StaggeredPrint("Please only enter numbers between 1 and 5",
                                     ConsoleColor.Yellow);
                 acceptedGuess = false;
 
@@ -665,7 +626,7 @@ class Game
 
     }
 
-    public static bool game4()
+    public static bool Game4(dynamic[] playerData)
     {
 
         // Use DateTime class to get the current date
@@ -674,8 +635,8 @@ class Game
         // User Random class to get a random number
         Random random = new Random();
 
-        // Create a title using Util.getMenu()
-        string title = Util.getMenu(new string[][] {new string[] {"Quiz"}}, 4);
+        // Create a title using Util.GetMenu()
+        string title = Util.GetMenu(new string[][] {new string[] {"Quiz"}}, 4);
 
         // Turn the day into 
         string todayStr = $"{today.ToString("dd/MM")}";
@@ -713,29 +674,23 @@ class Game
 
         };
 
-<<<<<<< HEAD
         // Variable setup
-=======
->>>>>>> 140856a928c642d37e21292e02742a7fd98d11ff
         List<int[]> allRanIndexes = new List<int[]> {};
         string[][] finalStrList = new string[][] {};
         int userAnswer = 0;
         int answerIndex = 0;
         int wrong = 0;
 
-<<<<<<< HEAD
         // Welcome the user
-        Util.staggeredPrint($"Welcome to the final trial, {playerData[0]}", ConsoleColor.DarkCyan);
-        Util.stagWait();
-        Util.staggeredPrint("To finish the dungoeon...", ConsoleColor.DarkCyan);
-        Util.stagWait();
-        Util.staggeredPrint("You must...", ConsoleColor.DarkCyan);
-        Util.stagWait();
-        Util.staggeredPrint("Do a quiz! 😁", ConsoleColor.DarkCyan);
-        Util.stagWait();
+        Util.StaggeredPrint($"Welcome to the final trial, {playerData[0]}", ConsoleColor.DarkCyan);
+        Util.StagWait();
+        Util.StaggeredPrint("To finish the dungoeon...", ConsoleColor.DarkCyan);
+        Util.StagWait();
+        Util.StaggeredPrint("You must...", ConsoleColor.DarkCyan);
+        Util.StagWait();
+        Util.StaggeredPrint("Do a quiz! 😁", ConsoleColor.DarkCyan);
+        Util.StagWait();
 
-=======
->>>>>>> 140856a928c642d37e21292e02742a7fd98d11ff
         // Create 5 arrays of 5 random indexes from 0 - 4
         for (int i = 0 ; i<5 ; i++)
         {
@@ -783,8 +738,8 @@ class Game
             };
 
             // Display question
-            Util.staggeredPrint(questions[questionCount], ConsoleColor.DarkCyan, 10);
-            Util.stagWait();
+            Util.StaggeredPrint(questions[questionCount], ConsoleColor.DarkCyan, 10);
+            Util.StagWait();
 
             foreach (string line in questionsStrArray)
             {
@@ -816,7 +771,7 @@ class Game
 
                     userAnswer = int.Parse(userAnswerStr);
 
-                    if (!Util.inRange(userAnswer, 1, 5))
+                    if (!Util.InRange(userAnswer, 1, 5))
                     {
 
                         // Purposely create a FormatException so it is caught and prints the error
@@ -827,7 +782,7 @@ class Game
                 } catch (FormatException)
                 {
 
-                    Util.staggeredPrint("Please enter a number between 1 and 5");
+                    Util.StaggeredPrint("Please enter a number between 1 and 5");
                     continue;
 
                 }
@@ -837,20 +792,12 @@ class Game
             if (userAnswer - 1 == answerIndex)
             {
 
-<<<<<<< HEAD
-                Util.staggeredPrint("Correct", ConsoleColor.DarkCyan);
-=======
-                Console.WriteLine($"!!{userAnswer}!! RIGHT ({answerIndex})");
->>>>>>> 140856a928c642d37e21292e02742a7fd98d11ff
+                Util.StaggeredPrint("Correct", ConsoleColor.DarkCyan);
 
             } else
             {
 
-<<<<<<< HEAD
-                Util.staggeredPrint("Nope, wrong", ConsoleColor.DarkCyan);
-=======
-                Console.WriteLine($"!!{userAnswer}!! WRONG ({answerIndex})");
->>>>>>> 140856a928c642d37e21292e02742a7fd98d11ff
+                Util.StaggeredPrint("Nope, wrong", ConsoleColor.DarkCyan);
                 wrong++;
 
             }
@@ -864,13 +811,12 @@ class Game
         if (wrong >= 3)
         {
 
-<<<<<<< HEAD
-            Util.staggeredPrint("Sorry, but you failed too many questions", ConsoleColor.DarkCyan);
-            Util.stagWait();
-            Util.staggeredPrint("Thanks for playing", ConsoleColor.DarkCyan);
-            Util.stagWait();
+            Util.StaggeredPrint("Sorry, but you failed too many questions", ConsoleColor.DarkCyan);
+            Util.StagWait();
+            Util.StaggeredPrint("Thanks for playing", ConsoleColor.DarkCyan);
+            Util.StagWait();
 
-            return true;
+            return false;
 
         }
 
@@ -878,27 +824,24 @@ class Game
         else
         {
 
-            Util.staggeredPrint("Well done!", ConsoleColor.DarkCyan);
-            Util.stagWait();
-            Util.staggeredPrint("You finished the dungeon", ConsoleColor.DarkCyan);
-            Util.stagWait();
-            Util.staggeredPrint("Thanks for playing!", ConsoleColor.DarkCyan);
-            Util.stagWait();
+            Util.StaggeredPrint("Well done!", ConsoleColor.DarkCyan);
+            Util.StagWait();
+            Util.StaggeredPrint("You finished the dungeon", ConsoleColor.DarkCyan);
+            Util.StagWait();
+            Util.StaggeredPrint("Thanks for playing!", ConsoleColor.DarkCyan);
+            Util.StagWait();
 
-            return true;
-=======
-            Util.staggeredPrint("Sorry, but you failed too many questions");
->>>>>>> 140856a928c642d37e21292e02742a7fd98d11ff
+            return false;
 
         }
 
     }
 
-    public static bool outro()
+    public static bool Outro()
     {
 
         // Ask user if they want to play again
-        Util.staggeredPrint("Do you want to play again? (Y/N)",
+        Util.StaggeredPrint("Do you want to play again? (Y/N)",
                             ConsoleColor.Green);
         Console.Write("> ");
         string choice = Console.ReadLine().ToLower();
@@ -920,7 +863,7 @@ class Game
 
     }
 
-    public static void changeGame()
+    public static void ChangeGame()
     {
 
         // Clear console and wait time inbetween games
