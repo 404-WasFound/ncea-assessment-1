@@ -11,27 +11,8 @@ class Game
         string[] outcomes = new string[2] {"That's a cool name!", "That's a weird name"};
         ConsoleColor[] colours = new ConsoleColor[2] {ConsoleColor.Green, ConsoleColor.Yellow};
         int[] waits = new int[2] {50, 100};
-<<<<<<< HEAD
         string name = "";
 
-=======
-        string[] preAlphaChars = "qwertyuiopasdfghjklzxcvbnm".Split("");
-        List<char> alphaChars = new List<char> {};
-        string name = "";
-
-        // Create a character list from a string array
-        foreach (string c in preAlphaChars)
-        {
-
-            // Convert string to character
-            alphaChars.Add(char.Parse(c));
-
-        }
-
-        // Convert to array
-        alphaChars.ToArray();
-
->>>>>>> 55934f06931dd60f275b80618933b5d7b6e7c0f6
         // Get a random number between 0 and 1
         int num = random.Next(0, 2);
 
@@ -46,7 +27,6 @@ class Game
         Util.StaggeredPrint("Why hello adventurer!", ConsoleColor.Green);
         Util.StagWait();
 
-<<<<<<< HEAD
         Util.StaggeredPrint("What is your name?", ConsoleColor.Green);
         Console.Write("> ");
 
@@ -84,71 +64,6 @@ class Game
             Util.StaggeredPrint("You'll just have to be 'Bob' then (=_=)",
                                 ConsoleColor.Yellow, waits[1]);
             name = "Bob";
-=======
-        while (true)
-        {
-
-            Util.staggeredPrint("What is your name?", ConsoleColor.Green);
-            Console.Write("> ");
-
-            name = Console.ReadLine();
-
-            // Check if 'name' is empty
-            if (name == "")
-            {
-
-                Util.staggeredPrint("It's not hard to type you know...",
-                                    ConsoleColor.Yellow, waits[1]);
-                Util.stagWait();
-                Util.staggeredPrint("You'll just have to be 'Bob' then (=_=)",
-                                    ConsoleColor.Yellow, waits[1]);
-                name = "Bob";
-
-            }
-
-            // Check if there are no numbers
-            List<bool> tof = new List<bool> {};
-
-            foreach (char c in name)
-            {
-
-                foreach (char aC in alphaChars)
-                {
-
-                    if (c == aC)
-                    {
-
-                        // If c is a letter
-                        tof.Add(true);
-
-                    }
-
-                    else
-                    {
-
-                        // If c isn't a letter
-                        tof.Add(false);
-
-                    }
-
-                }
-
-            }
-
-            if (tof.Contains(false))
-            {
-
-                continue;
-
-            }
-
-            else
-            {
-
-                break;
-
-            }
->>>>>>> 55934f06931dd60f275b80618933b5d7b6e7c0f6
 
         }
 
@@ -759,21 +674,13 @@ class Game
 
         };
 
-<<<<<<< HEAD
         // Variable setup
-=======
-<<<<<<< HEAD
-        // Variable setup
-=======
->>>>>>> 140856a928c642d37e21292e02742a7fd98d11ff
->>>>>>> 55934f06931dd60f275b80618933b5d7b6e7c0f6
         List<int[]> allRanIndexes = new List<int[]> {};
         string[][] finalStrList = new string[][] {};
         int userAnswer = 0;
         int answerIndex = 0;
         int wrong = 0;
 
-<<<<<<< HEAD
         // Welcome the user
         Util.StaggeredPrint($"Welcome to the final trial, {playerData[0]}", ConsoleColor.DarkCyan);
         Util.StagWait();
@@ -784,21 +691,6 @@ class Game
         Util.StaggeredPrint("Do a quiz! 😁", ConsoleColor.DarkCyan);
         Util.StagWait();
 
-=======
-<<<<<<< HEAD
-        // Welcome the user
-        Util.staggeredPrint($"Welcome to the final trial, {playerData[0]}", ConsoleColor.DarkCyan);
-        Util.stagWait();
-        Util.staggeredPrint("To finish the dungoeon...", ConsoleColor.DarkCyan);
-        Util.stagWait();
-        Util.staggeredPrint("You must...", ConsoleColor.DarkCyan);
-        Util.stagWait();
-        Util.staggeredPrint("Do a quiz! 😁", ConsoleColor.DarkCyan);
-        Util.stagWait();
-
-=======
->>>>>>> 140856a928c642d37e21292e02742a7fd98d11ff
->>>>>>> 55934f06931dd60f275b80618933b5d7b6e7c0f6
         // Create 5 arrays of 5 random indexes from 0 - 4
         for (int i = 0 ; i<5 ; i++)
         {
@@ -900,28 +792,14 @@ class Game
             if (userAnswer - 1 == answerIndex)
             {
 
-<<<<<<< HEAD
                 Util.StaggeredPrint("Correct", ConsoleColor.DarkCyan);
-=======
-<<<<<<< HEAD
-                Util.staggeredPrint("Correct", ConsoleColor.DarkCyan);
-=======
->>>>>>> 55934f06931dd60f275b80618933b5d7b6e7c0f6
                 Console.WriteLine($"!!{userAnswer}!! RIGHT ({answerIndex})");
->>>>>>> 140856a928c642d37e21292e02742a7fd98d11ff
 
             } else
             {
 
-<<<<<<< HEAD
                 Util.StaggeredPrint("Nope, wrong", ConsoleColor.DarkCyan);
-=======
-<<<<<<< HEAD
-                Util.staggeredPrint("Nope, wrong", ConsoleColor.DarkCyan);
-=======
->>>>>>> 55934f06931dd60f275b80618933b5d7b6e7c0f6
                 Console.WriteLine($"!!{userAnswer}!! WRONG ({answerIndex})");
->>>>>>> 140856a928c642d37e21292e02742a7fd98d11ff
                 wrong++;
 
             }
@@ -935,22 +813,12 @@ class Game
         if (wrong >= 3)
         {
 
-<<<<<<< HEAD
             Util.StaggeredPrint("Sorry, but you failed too many questions", ConsoleColor.DarkCyan);
             Util.StagWait();
             Util.StaggeredPrint("Thanks for playing", ConsoleColor.DarkCyan);
             Util.StagWait();
 
             return false;
-=======
-<<<<<<< HEAD
-            Util.staggeredPrint("Sorry, but you failed too many questions", ConsoleColor.DarkCyan);
-            Util.stagWait();
-            Util.staggeredPrint("Thanks for playing", ConsoleColor.DarkCyan);
-            Util.stagWait();
-
-            return true;
->>>>>>> 55934f06931dd60f275b80618933b5d7b6e7c0f6
 
         }
 
@@ -958,7 +826,6 @@ class Game
         else
         {
 
-<<<<<<< HEAD
             Util.StaggeredPrint("Well done!", ConsoleColor.DarkCyan);
             Util.StagWait();
             Util.StaggeredPrint("You finished the dungeon", ConsoleColor.DarkCyan);
@@ -967,19 +834,6 @@ class Game
             Util.StagWait();
 
             return false;
-=======
-            Util.staggeredPrint("Well done!", ConsoleColor.DarkCyan);
-            Util.stagWait();
-            Util.staggeredPrint("You finished the dungeon", ConsoleColor.DarkCyan);
-            Util.stagWait();
-            Util.staggeredPrint("Thanks for playing!", ConsoleColor.DarkCyan);
-            Util.stagWait();
-
-            return true;
-=======
-            Util.staggeredPrint("Sorry, but you failed too many questions");
->>>>>>> 140856a928c642d37e21292e02742a7fd98d11ff
->>>>>>> 55934f06931dd60f275b80618933b5d7b6e7c0f6
 
         }
 
