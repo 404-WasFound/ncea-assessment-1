@@ -126,41 +126,40 @@
 
 ## Testing
 
-| Field  | Expected Type | Input          | Expected Output | Recived Output | Errors                        | Date       |
-|--------|---------------|----------------|-----------------|----------------|-------------------------------|------------|
-| name   | string        | "abc"          | "abc"           | "abc"          | None                          | 28/02/2022 |
-| name   | string        | 123            | Custom Error    | "123"          | Doesn't detect integers       | 28/02/2022 |
-| name   | string        | 123            | Custom Error    | Custom Error   | None                          | 28/02/2022 |
-| name   | string        | ""             | Custom Error    | Custom Error   | None                          | 29/02/2022 |
-| age    | int           | 123            | 123             | 123            | None                          | 01/03/2022 |
-| age    | int           | "abc"          | Custom Error    | Error          | Doesn't detect strings        | 01/03/2022 |
-| age    | int           | "abc"          | Custom Error    | Custom Error   | None                          | 01/03/2022 |
-| age    | int           | ""             | Custom Error    | Custom Error   | None                          | 02/03/2022 |
-| answer | string        | "test"         | "Fail"          | Error          | Quits program if answer wrong | 05/03/2022 |
-| answer | string        | "test"         | "Fail"          | "Fail"         | None                          | 05/03/2022 |
-| answer | string        | 123            | "Fail"          | "Fail"         | None                          | 05/03/2022 |
-| answer | string        | "right answer" | "Pass"          | "Pass"         | None                          | 06/03/2022 |
-|        |               |                |                 |                |                               |            |
-|        |               |                |                 |                |                               |            |
-|        |               |                |                 |                |                               |            |
-|        |               |                |                 |                |                               |            |
-|        |               |                |                 |                |                               |            |
-|        |               |                |                 |                |                               |            |
-|        |               |                |                 |                |                               |            |
-|        |               |                |                 |                |                               |            |
-|        |               |                |                 |                |                               |            |
-|        |               |                |                 |                |                               |            |
-|        |               |                |                 |                |                               |            |
-|        |               |                |                 |                |                               |            |
-|        |               |                |                 |                |                               |            |
-|        |               |                |                 |                |                               |            |
-|        |               |                |                 |                |                               |            |
-|        |               |                |                 |                |                               |            |
-|        |               |                |                 |                |                               |            |
-|        |               |                |                 |                |                               |            |
-|        |               |                |                 |                |                               |            |
-|        |               |                |                 |                |                               |            |
-
+| Field       | Expected Type | Input          | Expected Output | Recived Output | Errors                        | Date       |
+|-------------|---------------|----------------|-----------------|----------------|-------------------------------|------------|
+| name        | string        | "abc"          | "abc"           | "abc"          | None                          | 28/02/2022 |
+| name        | string        | 123            | Custom Error    | "123"          | Doesn't detect integers       | 28/02/2022 |
+| name        | string        | 123            | Custom Error    | Custom Error   | None                          | 28/02/2022 |
+| name        | string        | ""             | Custom Error    | Custom Error   | None                          | 29/02/2022 |
+| age         | int           | 123            | 123             | 123            | None                          | 01/03/2022 |
+| age         | int           | "abc"          | Custom Error    | Error          | Doesn't detect strings        | 01/03/2022 |
+| age         | int           | "abc"          | Custom Error    | Custom Error   | None                          | 01/03/2022 |
+| age         | int           | ""             | Custom Error    | Custom Error   | None                          | 02/03/2022 |
+| answer      | string        | "test"         | "Fail"          | Error          | Quits program if answer wrong | 05/03/2022 |
+| answer      | string        | "test"         | "Fail"          | "Fail"         | None                          | 05/03/2022 |
+| answer      | string        | 123            | "Fail"          | "Fail"         | None                          | 05/03/2022 |
+| answer      | string        | "right answer" | "Pass"          | "Pass"         | None                          | 06/03/2022 |
+| actionIndex | int (1 - 4)   | 1              | "Pass"          | "Pass"         | None                          | 07/02/2022 |
+| actionIndex | int (1 - 4)   | 5              | Custom Error    | Error          | Doesn't detect boundary cases | 07/02/2022 |
+|             |               |                |                 |                |                               |            |
+|             |               |                |                 |                |                               |            |
+|             |               |                |                 |                |                               |            |
+|             |               |                |                 |                |                               |            |
+|             |               |                |                 |                |                               |            |
+|             |               |                |                 |                |                               |            |
+|             |               |                |                 |                |                               |            |
+|             |               |                |                 |                |                               |            |
+|             |               |                |                 |                |                               |            |
+|             |               |                |                 |                |                               |            |
+|             |               |                |                 |                |                               |            |
+|             |               |                |                 |                |                               |            |
+|             |               |                |                 |                |                               |            |
+|             |               |                |                 |                |                               |            |
+|             |               |                |                 |                |                               |            |
+|             |               |                |                 |                |                               |            |
+|             |               |                |                 |                |                               |            |
+|             |               |                |                 |                |                               |            |
 
 
 **Errors For Table**
