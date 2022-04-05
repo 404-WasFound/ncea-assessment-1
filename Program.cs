@@ -1,10 +1,5 @@
 ﻿// https://github.com/404-wasfound/ncea-asesment-1
 
-// Intro        2q
-// 3 Riddles    3-9q (6q average)
-// 1 Battle     1-3q (2q average)
-// 5 Doors      3q
-
 public class Program
 {
 
@@ -19,38 +14,39 @@ public class Program
         {
 
             // Setup console settings
+            // Set terminal to all black
             Console.BackgroundColor = ConsoleColor.Black;
 
-            // Call '.Clear()' to set terminal to all DarkBlue
-            //Console.Clear();
+            // Clear the screen
             Console.ForegroundColor = ConsoleColor.White;
 
-            // Setup dynamic array that can only take 2 items
+            // Array of player data
             dynamic[] playerData = new dynamic[2] {"", 0};
 
-            //Call 'intro()' to start game
-            playerData = Game.intro();
+            // Start game
+            // Returns playerData
+            playerData = Game.Intro();
 
-            // // Call 'game1()' to start game1, but wait time in between
-            // Game.changeGame();
-            // loop = Game.game1(playerData);
+            // Start game1 and reset console
+            Game.ChangeGame();
+            loop = Game.Game1(playerData);
 
-            // // Call 'game2()' to start game2, but wait time in between
-            // Game.changeGame();
-            // loop = Game.game2(playerData);
+            // Start game2 and reset console
+            Game.ChangeGame();
+            loop = Game.Game2(playerData);
 
-            // // Call 'game3()' to start game3, but wait time in between
-            // Game.changeGame();
-            // loop = Game.game3(playerData);
+            // Start game3 and reset console
+            Game.ChangeGame();
+            loop = Game.Game3(playerData);
 
-            // Call 'game4()' to start game3, but wait time in between
-            Game.changeGame();
-            loop = Game.game4();
+            // Start game3 and reset console
+            Game.ChangeGame();
+            loop = Game.Game4(playerData);
 
         }
 
-        // Call 'outro()' to ask the user if they want to play again
-        loop = Game.outro();
+        // End of the game
+        loop = Game.Outro();
 
     }
 

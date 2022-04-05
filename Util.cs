@@ -1,7 +1,7 @@
 class Util
 {
 
-    public static bool inRange(float num, float min, float max)
+    public static bool InRange(float num, float min, float max)
     {
 
         // Check if 'num' is between
@@ -14,7 +14,7 @@ class Util
 
     }
 
-    public static void staggeredPrint(string text, ConsoleColor colour=ConsoleColor.White, int wait=50)
+    public static void StaggeredPrint(string text, ConsoleColor colour=ConsoleColor.White, int wait=50)
     {
 
         // Create instance of System.Random class
@@ -43,7 +43,7 @@ class Util
 
     }
 
-    public static void stagWait()
+    public static void StagWait()
     {
 
         // Wait time between sentences
@@ -51,17 +51,7 @@ class Util
 
     }
 
-    public static void inputError()
-    {
-
-        // Notify user that their input was wrong
-        Console.ForegroundColor = ConsoleColor.Yellow;
-        Console.WriteLine(@"/!\ Error with input, please make sure you typed the right thing /!\");
-        Console.ForegroundColor = ConsoleColor.White;
-
-    }
-
-    public static string getMenu(dynamic[][] data, int maxItemStringLength)
+    public static string GetMenu(dynamic[][] data, int maxItemStringLength)
     {
 
         // Symbols
