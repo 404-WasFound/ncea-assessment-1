@@ -793,13 +793,11 @@ class Game
             {
 
                 Util.StaggeredPrint("Correct", ConsoleColor.DarkCyan);
-                Console.WriteLine($"!!{userAnswer}!! RIGHT ({answerIndex})");
 
             } else
             {
 
                 Util.StaggeredPrint("Nope, wrong", ConsoleColor.DarkCyan);
-                Console.WriteLine($"!!{userAnswer}!! WRONG ({answerIndex})");
                 wrong++;
 
             }

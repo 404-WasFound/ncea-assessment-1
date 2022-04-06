@@ -7,8 +7,4 @@ build_property.InvariantGlobalization =
 build_property.PlatformNeutralAssembly = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Assesment
-<<<<<<< HEAD
-build_property.ProjectDir = D:\Code\C#\ncea-assessment-1\
-=======
-build_property.ProjectDir = \\internal.lbc.school.nz\users\home\students\20234\documents\!DTS NCEA 1\ncea-assesment-1\
->>>>>>> 55934f06931dd60f275b80618933b5d7b6e7c0f6
+build_property.ProjectDir = d:\Code\C#\ncea-assessment-1\
