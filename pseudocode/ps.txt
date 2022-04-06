@@ -154,7 +154,26 @@ Create a function called "game3" that returns a boolean
                 Return false
 
         Return false
-
+        
+Create a fucntion called "game4" that returns a boolean
+    
+    Welcome the user
+    
+    Create a 1D string array with a length of 5 containing 5 different questions called "questions"
+    Create a 1D string array with a length of 5 containing 5 different answers to {questions} called "answers"
+    Create a 2D string array with a length of 5 containing 5 different 1D arrays containing 5 strings, the index of 0 will equal the right answer called "altAnswers"
+    
+    Create a 2D int list with a length of 5 and call it "allRanIndexes"
+    
+    Create a for loop that loops over the length of 5
+    
+        Create a 1D int list containing numbers 1 - 5 in a random order, each number only appears once, call it "ranIndexes"
+        
+        Add {ranIndexes} to {allRanIndexes}
+        
+    Create a for loop that loops over each 1D int array in {allRanIndexes}
+    
+        Create a 1D string array containing strings containing {altAnswers} at the index of the {1D int array} at the index of 0, 1, 2, 3, and 4
 
 Create a function called "outro" that returns a boolean
 
