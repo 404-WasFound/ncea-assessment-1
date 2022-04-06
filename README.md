@@ -4,19 +4,21 @@
 
 ## Project Outline
 
-**Conventions**
+### Conventions
 - [C# Conventions](https://docs.microsoft.com/en-us/dotnet/csharp/fundamentals/coding-style/coding-conventions)
-
-**Details**
+- Evidence of these
+    - `Program.cs` (line `3` & `25`)
+    - `Util.cs` (line `4` & `22`)
+        
+### Details
 - C#
 - Quiz style as a text-based adventure game
-
-**Pseudocode**
+### Pseudocode
 - [Pseudocode](https://github.com/404-WasFound/ncea-assessment-1/blob/main/pseudocode/type2.txt)
 
-# Commits
+## Commits
 
-## Version 1
+### Version 1
 
 **24/02/2022**
 - Created `Program`, `Util`, `GameClass`, `Table`, `Util`, and `Item` classes.
@@ -31,7 +33,7 @@
 - Created `data/items.json` and `data/rooms.json`.
 - Created `Util.getJsonData(string filename)`.
 
-## Version 2
+### Version 2
 
 **27/02/2022**
 - Restarted project as code was messy and badly-formatted.
@@ -106,7 +108,7 @@
 **21/03/2022 - 28/03/2022**
 - Worked on pseudocode.
 
-## Version 3
+### Version 3
 
 **29/03/2022**
 - Added `Game.Game4()`.
@@ -135,7 +137,7 @@
 - Code finished
 
 
-## Testing
+### Testing
 
 | Field       | Expected Type | Input          | Expected Output | Recived Output | Errors                        | Date       |
 |-------------|---------------|----------------|-----------------|----------------|-------------------------------|------------|
@@ -166,10 +168,10 @@
 | playAgain   | string        | "y"            | Return true     | Return true    | None                          | 14/02/2022 |
 | playAgain   | string        | "n"            | Return false    | Return false   | None                          | 14/02/2022 |
 | playAgain   | string        | "x"            | Return false    | Return false   | None                          | 14/02/2022 |
-| playeAgain  | string        | 1              | Return false    | Return false   | None                          | 14/02/2022 |
+| playAgain  | string        | 1              | Return false    | Return false   | None                          | 14/02/2022 |
 
 
-## Debugging
+### Debugging
 | Error | Fix | Date |
 | -- | -- | -- |
 | Cannot implicitly convert type `'string[]'` to `'string'` | Created for loop that loops through each `string` and appends them to a new `string` | 03/02/2022 |
@@ -185,9 +187,3 @@
 | There is no argument given that corresponds to the required formal parameter `'playerData'` of `'Game.Game1(dynamic[])'` | Added `playerData` as a parameter | 30/02/2022 |
 | The modifier `'public'` is not valid for this item | Added `}` to close off method | 01/03/2022 |
 | Represents text as a sequence of `UTF-16` code units. | Added `"` to end of string | 02/03/2022 |
-
-**Errors For Table**
-- Cannot implicitly convert type 'string[]' to 'string'
-- ; expected
-- Only assignment, call, increment, decrement, await, and new object expressions can be used as a statement (for -> foreach)
--Unhandled exception. Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot implicitly convert type 'long' to 'int'. An explicit conversion exists (are you missing a cast?)

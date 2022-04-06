@@ -1,6 +1,7 @@
 class Util
 {
-
+    
+    //? CODE CONVENTIONS: Pascal case methods
     public static bool InRange(float num, float min, float max)
     {
 
@@ -18,6 +19,7 @@ class Util
     {
 
         // Create instance of System.Random class
+        //? CODE CONVENTIONS: Camel case class instance
         Random random = new Random();
 
         // Change text colour to 'colour' or leave as white if args not passed
@@ -32,8 +34,6 @@ class Util
             Thread.Sleep(wait);
 
         }
-
-        // test
 
         // Move cursor to next line so next output statements don't get mixed
         Console.Write("\n");

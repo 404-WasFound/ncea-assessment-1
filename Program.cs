@@ -1,5 +1,6 @@
 ﻿// https://github.com/404-wasfound/ncea-asesment-1
 
+//? CODE CONVENTIONS: Pascal case classes
 public class Program
 {
 
@@ -21,6 +22,7 @@ public class Program
             Console.ForegroundColor = ConsoleColor.White;
 
             // Array of player data
+            //? CODE CONVENTIONS: Camel case variables
             dynamic[] playerData = new dynamic[2] {"", 0};
 
             // Start game
