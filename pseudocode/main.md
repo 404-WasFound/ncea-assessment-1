@@ -1,3 +1,4 @@
+## Game file
 Create a function called "intro" that returns a multi-type ARRAY
 
     Welcome the user
@@ -182,3 +183,28 @@ Create a function called "outro" that returns a boolean
     If they do return true
 
     Else return false
+    
+    
+    
+## Main File
+
+Create a boolean called "loop" and set it to false
+
+Create a while loop with the condition of loop
+
+    Set loop to Game.intro()
+    Clear the screen
+    
+    Set loop to Game.intro()
+    Clear the screen
+    
+    Set loop to Game.intro()
+    Clear the screen
+    
+    Set loop to Game.intro()
+    Clear the screen
+    
+    Set loop to Game.intro()
+    Clear the screen
+    
+Set loop to Game.outro()
