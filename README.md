@@ -181,8 +181,8 @@
 | Cannot implicitly convert type `'long'` to `'int'` | Changed variable to `long` | 16/02/2022 |
 | `;` expected | Added `;` at the end of line | 21/02/2022 |
 | `;` expected | Added `;` at the end of line | 21/02/2022 |
-| Cannot implicitly convert type `'string'` to `'int'` | Created a system to check for `ints` then convert them |  |
-| Cannot implicitly convert type `'string[]'` to `'string'` | Created for loop that loops through each `string` and appends them to a new `string` |  |
+| Cannot implicitly convert type `'string'` to `'int'` | Created a system to check for `ints` then convert them | 24/02/2022 |
+| Cannot implicitly convert type `'string[]'` to `'string'` | Created for loop that loops through each `string` and appends them to a new `string` | 24/02/2022 |
 | `;` expected | Added `;` at the end of line | 28/02/2022 |
 | There is no argument given that corresponds to the required formal parameter `'playerData'` of `'Game.Game1(dynamic[])'` | Added `playerData` as a parameter | 30/02/2022 |
 | The modifier `'public'` is not valid for this item | Added `}` to close off method | 01/03/2022 |
