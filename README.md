@@ -13,8 +13,16 @@
 ### Details
 - C#
 - Quiz style as a text-based adventure game
+- 
 ### Pseudocode
-- [Pseudocode](https://github.com/404-WasFound/ncea-assessment-1/blob/main/pseudocode/type2.txt)
+- [Pseudocode](https://github.com/404-WasFound/ncea-assessment-1/blob/main/pseudocode/main.md)
+
+### How to run
+- Download the repository / code
+- Download `Dotnet` from [here](https://dotnet.microsoft.com/en-us/download)
+- Extract the downloaded `zip file`
+- Open `*/*/ncea_assessment-1/` in `CMD` / `Powershell`
+- Run `dotnet run program.cs`
 
 ## Commits
 
