@@ -19,6 +19,7 @@
 
 ### How to run
 - Download the `Game.exe` file
+- Double click the file in `File Explorer`
 
 ## Commits
 
