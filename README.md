@@ -13,7 +13,7 @@
 ### Details
 - C#
 - Quiz style as a text-based adventure game
-- 
+
 ### Pseudocode
 - [Pseudocode](https://github.com/404-WasFound/ncea-assessment-1/blob/main/pseudocode/main.md)
 
