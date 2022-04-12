@@ -10,6 +10,7 @@
         Return {playerData}
 
 
+
     Create a function called "game1" that returns a boolean
 
         Create a 1D string array with a length of 3 containing 3 riddles called "riddles"
@@ -156,6 +157,8 @@
 
             Return false
 
+
+
     Create a fucntion called "game4" that returns a boolean
 
         Welcome the user
@@ -174,7 +177,38 @@
 
         Create a for loop that loops over each 1D int array in {allRanIndexes}
 
-            Create a 1D string array containing strings containing {altAnswers} at the index of the {1D int array} at the index of 0, 1, 2, 3, and 4
+            Create a 1D string array containing strings containing {altAnswers} at the index of the {1D int array} at the index of 0, 1, 2, 3, and 4 and call it "questionsStrArray"
+
+            Create a for loop that loops over each string in {questionsStrArray}
+            
+                print the string
+                
+                get the index of the answer
+                
+            Create a while loop with the condition of {true}
+            
+                Create a string that takes user input and call it "userAnswer"
+                
+                Check if {userAnswer} is a number between 1 and 5
+                
+                    Print and error if not
+                    Else break from the loop
+                    
+                Check if {userAnswer - 1} is equal to {answerIndex}
+                
+                    Tell the user they got it right
+                    
+                Else
+                
+                    Tell the user they got it wrong
+                    
+            Check if the user got 3 or more questions wrong
+            
+                If they did print an error and restart the game and return {true}
+                
+                IF they didn't print a congratulations message and return {false}
+
+
 
     Create a function called "outro" that returns a boolean
 
