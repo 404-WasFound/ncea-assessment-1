@@ -18,11 +18,7 @@
 - [Pseudocode](https://github.com/404-WasFound/ncea-assessment-1/blob/main/pseudocode/main.md)
 
 ### How to run
-- Download the repository / code
-- Download `Dotnet` from [here](https://dotnet.microsoft.com/en-us/download)
-- Extract the downloaded `zip file`
-- Open `*/*/ncea_assessment-1-main/` in `CMD` / `Powershell`
-- Run `dotnet run program.cs`
+- Download the `Game.exe` file
 
 ## Commits
 
