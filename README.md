@@ -18,8 +18,8 @@
 - [Pseudocode](https://github.com/404-WasFound/ncea-assessment-1/blob/main/pseudocode/main.md)
 
 ### How to run
-- Download the `Game.exe` file
-- Double click the file in `File Explorer`
+- Download the `Assessment.exe` from the releases tab
+- Run the file, if you get an error just press `[Run]` or `[Ok]`
 
 ## Commits
 
